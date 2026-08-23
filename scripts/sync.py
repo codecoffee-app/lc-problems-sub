@@ -133,7 +133,9 @@ def to_stored_format(submission):
 
 
 def get_default_limit():
-    return int(os.environ.get("DEFAULT_LIMIT", "100"))
+    # Empty secret values become "" in Actions and must not crash int().
+    raw = os.environ.get("DEFAULT_LIMIT") or "100"
+    return int(raw)
 
 
 def load_config(config_path):
@@ -173,8 +175,8 @@ def append_submissions_to_problem(problem_dir, submissions, batch):
     config_path = os.path.join(problem_dir, "config.json")
     config = load_config(config_path)
 
-    current = config.get("current", 1)
-    limit = config.get("limit", get_default_limit())
+    current = int(config["current"]) if config.get("current") not in (None, "") else 1
+    limit = int(config["limit"]) if config.get("limit") not in (None, "") else get_default_limit()
 
     remaining = list(submissions)
     while remaining:
