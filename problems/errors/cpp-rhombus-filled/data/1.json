@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "email": "tab.snehasharma@gmail.com",
+    "timestamp": 1786046271835,
+    "language": "cpp",
+    "status": "Wrong Answer",
+    "code": "//Write your code here\n#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < n - i - 1; j++)\n            cout << 'h';\n        for (int j = 0; j < n; j++)\n            cout << '*';\n        cout << endl;\n    }\n    return 0;\n}"
+  }
+]
