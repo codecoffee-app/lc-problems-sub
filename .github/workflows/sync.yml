@@ -1,0 +1,61 @@
+name: Sync submissions
+
+on:
+  schedule:
+    - cron: '0 0 * * *'      # once every 24 hours (UTC) — adjust as needed
+  workflow_dispatch:          # lets you trigger it manually from the Actions tab
+
+permissions:
+  contents: write             # allows pushing back to this repo
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run sync script
+        run: python scripts/sync.py
+        env:
+          SHEET_URLS: ${{ secrets.SHEET_URLS }}
+          DEFAULT_LIMIT: ${{ secrets.DEFAULT_LIMIT }}
+          STATUS_SHEET_URL: ${{ secrets.STATUS_SHEET_URL }}
+          REPO_NAME: problems
+
+      - name: Commit & push
+        run: |
+          git config user.name "sync-bot"
+          git config user.email "sync-bot@users.noreply.github.com"
+          git add .
+          git commit -m "sync submissions $(date -u)" || echo "nothing to commit"
+          git push
+
+      # Fire users sync only after problems has pushed, so url/index
+      # math reads the finished config + data files.
+      # Secret USERS_DISPATCH_TOKEN: PAT with workflow scope on lc-user-sub.
+      - name: Trigger users sync
+        env:
+          USERS_DISPATCH_TOKEN: ${{ secrets.USERS_DISPATCH_TOKEN }}
+          USERS_REPO: ${{ secrets.USERS_REPO }}
+        run: |
+          if [ -z "$USERS_DISPATCH_TOKEN" ]; then
+            echo "USERS_DISPATCH_TOKEN not set - skipping users dispatch."
+            exit 0
+          fi
+          REPO="${USERS_REPO:-codecoffee-app/lc-user-sub}"
+          curl -fsS -X POST \
+            -H "Authorization: Bearer ${USERS_DISPATCH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${REPO}/dispatches" \
+            -d '{"event_type":"problems-sync-complete"}'
+          echo "Dispatched problems-sync-complete to ${REPO}"
