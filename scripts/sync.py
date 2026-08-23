@@ -246,8 +246,18 @@ def log_sync_status():
     try:
         resp = requests.post(status_url, json=payload, timeout=30)
         resp.raise_for_status()
-        print(f"Logged sync status: repo={REPO_NAME}, date={payload['date']}")
-    except requests.RequestException as e:
+        if "application/json" not in resp.headers.get("Content-Type", ""):
+            raise ValueError(
+                f"non-JSON response (status {resp.status_code}): {resp.text[:200]}"
+            )
+        body = resp.json()
+        if body.get("status") != "ok":
+            raise ValueError(f"unexpected response body: {body}")
+        print(
+            f"Logged sync status: repo={REPO_NAME}, date={payload['date']}, "
+            f"row={body.get('row')}"
+        )
+    except (requests.RequestException, ValueError, json.JSONDecodeError) as e:
         print(f"WARNING: failed to log sync status: {e}", file=sys.stderr)
 
 
