@@ -40,5 +40,40 @@
     "language": "cpp",
     "status": "Accepted",
     "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    vector<int> l(n);  // l[i] := max(height[0..i])\n    vector<int> r(n);  // r[i] := max(height[i..n))\n\n    for (int i = 0; i < n; ++i)\n      l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n\n    for (int i = n - 1; i >= 0; --i)\n      r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n\n    for (int i = 0; i < n; ++i)\n      ans += min(l[i], r[i]) - height[i];\n\n    return ans;\n  }\n};\n"
+  },
+  {
+    "email": "tab.snehasharma@gmail.com",
+    "timestamp": 1785947209261,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& a) {\n        int n=a.size();\n        int k=n;\n        for(int i=0;i<n-1;i++){\n            if(a[i]!=0&&a[i+1]<a[i]){\n                k=i;\n                break;\n            }\n        }\n        int ans=0,temp=0;\n        for(int i=k+1;i<n;i++){\n           if(a[i]>=a[k]){\n               ans+=temp;\n               temp=0;\n               k=i;\n           }\n            else{\n                temp+=a[k]-a[i];\n            }\n        }\n        int p=k;\n        for(int i=n-1;i>k;i--){\n            if(a[i]!=0&&a[i-1]<a[i]){\n                p=i;\n                break;\n            }\n        }\n        int ans1=0,temp1=0;\n        for(int i=p-1;i>=k;i--){\n           if(a[i]>=a[p]){\n               ans1+=temp1;\n               temp1=0;\n               p=i;\n           }\n            else{\n                temp1+=a[p]-a[i];\n            }\n        }\n        return ans+ans1;\n    }\n};"
+  },
+  {
+    "email": "tab.snehasharma@gmail.com",
+    "timestamp": 1785953426337,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& a) {\n\n        // vector<int> x = {4,2,0,3,2,5};\n        // if(x==a) return 0;\n\n        int n=a.size();\n        int k=n;\n        for(int i=0;i<n-1;i++){\n            if(a[i]!=0&&a[i+1]<a[i]){\n                k=i;\n                break;\n            }\n        }\n        int ans=0,temp=0;\n        for(int i=k+1;i<n;i++){\n           if(a[i]>=a[k]){\n               ans+=temp;\n               temp=0;\n               k=i;\n           }\n            else{\n                temp+=a[k]-a[i];\n            }\n        }\n        int p=k;\n        for(int i=n-1;i>k;i--){\n            if(a[i]!=0&&a[i-1]<a[i]){\n                p=i;\n                break;\n            }\n        }\n        int ans1=0,temp1=0;\n        for(int i=p-1;i>=k;i--){\n           if(a[i]>=a[p]){\n               ans1+=temp1;\n               temp1=0;\n               p=i;\n           }\n            else{\n                temp1+=a[p]-a[i];\n            }\n        }\n        return ans+ans1;\n    }\n};"
+  },
+  {
+    "email": "tab.snehasharma@gmail.com",
+    "timestamp": 1786220455016,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    vector<int> l(n);  // l[i] := max(height[0..i])\n    vector<int> r(n);  // r[i] := max(height[i..n))\n\n    for (int i = 0; i < n; ++i)\n      l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n\n    for (int i = n - 1; i >= 0; --i)\n      r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n\n    for (int i = 0; i < n; ++i)\n      ans += min(l[i], r[i]) - height[i];\n\n    return ans;\n  }\n};"
+  },
+  {
+    "email": "tab.snehasharma@gmail.com",
+    "timestamp": 1786220770173,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    vector<int> l(n);  // l[i] := max(height[0..i])\n    vector<int> r(n);  // r[i] := max(height[i..n))\n\n    for (int i = 0; i < n; ++i)\n      l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n\n    for (int i = n - 1; i >= 0; --i)\n      r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n\n    for (int i = 0; i < n; ++i)\n      ans += min(l[i], r[i]) - height[i];\n\n    return ans;\n  }\n};"
+  },
+  {
+    "email": "tab.snehasharma@gmail.com",
+    "timestamp": 1786267652225,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    vector<int> l(n);  // l[i] := max(height[0..i])\n    vector<int> r(n);  // r[i] := max(height[i..n))\n\n    for (int i = 0; i < n; ++i)\n      l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n\n    for (int i = n - 1; i >= 0; --i)\n      r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n\n    for (int i = 0; i < n; ++i)\n      ans += min(l[i], r[i]) - height[i];\n\n    return ans;\n  }\n};\n"
   }
 ]

@@ -5,5 +5,12 @@
     "language": "mysql",
     "status": "Accepted",
     "code": "SELECT e.name, p.project_name \nFROM Employees e \nJOIN \nProjects p \nON e.emp_id = p.emp_id;"
+  },
+  {
+    "email": "tab.snehasharma@gmail.com",
+    "timestamp": 1786269169664,
+    "language": "mysql",
+    "status": "Accepted",
+    "code": "SELECT e.name, p.project_name \nFROM Employees e \nJOIN \nProjects p \nON e.emp_id = p.emp_id;"
   }
 ]
