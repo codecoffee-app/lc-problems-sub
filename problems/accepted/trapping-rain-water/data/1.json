@@ -4,7 +4,7 @@
     "timestamp": 1785931787909,
     "language": "cpp",
     "status": "Accepted",
-    "code": "int main()"
+    "code": "class Solution {\n    public:\n        int trap(vector<int>& a) {\n            return 0;\n        }\n};"
   },
   {
     "email": "tab.snehasharma@gmail.com",
