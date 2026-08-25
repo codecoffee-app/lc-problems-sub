@@ -54,5 +54,33 @@
     "language": "cpp",
     "status": "Accepted",
     "code": "//Write your code here\n#include <iostream>\n#include <cmath>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n\n    int original = n;\n    int digits = 0;\n    int temp = n;\n\n    // Count digits\n    while (temp > 0) {\n        digits++;\n        temp /= 10;\n    }\n\n    temp = n;\n    int sum = 0;\n\n    // Compute Armstrong sum\n    while (temp > 0) {\n        int digit = temp % 10;\n        sum += pow(digit, digits);\n        temp /= 10;\n    }\n\n    if (sum == original)\n        cout << \"Yes\";\n    else\n        cout << \"No\";\n\n    return 0;\n}"
+  },
+  {
+    "email": "tab.snehasharma@gmail.com",
+    "timestamp": 1786221419157,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "//Write your code here\n#include <iostream>\n#include <cmath>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n\n    int original = n;\n    int digits = 0;\n    int temp = n;\n\n    // Count digits\n    while (temp > 0) {\n        digits++;\n        temp /= 10;\n    }\n\n    temp = n;\n    int sum = 0;\n\n    // Compute Armstrong sum\n    while (temp > 0) {\n        int digit = temp % 10;\n        sum += pow(digit, digits);\n        temp /= 10;\n    }\n\n    if (sum == original)\n        cout << \"Yes\";\n    else\n        cout << \"No\";\n\n    return 0;\n}"
+  },
+  {
+    "email": "tab.snehasharma@gmail.com",
+    "timestamp": 1786221422548,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "//Write your code here\n#include <iostream>\n#include <cmath>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n\n    int original = n;\n    int digits = 0;\n    int temp = n;\n\n    // Count digits\n    while (temp > 0) {\n        digits++;\n        temp /= 10;\n    }\n\n    temp = n;\n    int sum = 0;\n\n    // Compute Armstrong sum\n    while (temp > 0) {\n        int digit = temp % 10;\n        sum += pow(digit, digits);\n        temp /= 10;\n    }\n\n    if (sum == original)\n        cout << \"Yes\";\n    else\n        cout << \"No\";\n\n    return 0;\n}"
+  },
+  {
+    "email": "tab.snehasharma@gmail.com",
+    "timestamp": 1786221562059,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "//Write your code here\n#include <iostream>\n#include <cmath>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n\n    int original = n;\n    int digits = 0;\n    int temp = n;\n\n    // Count digits\n    while (temp > 0) {\n        digits++;\n        temp /= 10;\n    }\n\n    temp = n;\n    int sum = 0;\n\n    // Compute Armstrong sum\n    while (temp > 0) {\n        int digit = temp % 10;\n        sum += pow(digit, digits);\n        temp /= 10;\n    }\n\n    if (sum == original)\n        cout << \"Yes\";\n    else\n        cout << \"No\";\n\n    return 0;\n}"
+  },
+  {
+    "email": "tab.snehasharma@gmail.com",
+    "timestamp": 1786221585587,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "//Write your code here\n#include <iostream>\n#include <cmath>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n\n    int original = n;\n    int digits = 0;\n    int temp = n;\n\n    // Count digits\n    while (temp > 0) {\n        digits++;\n        temp /= 10;\n    }\n\n    temp = n;\n    int sum = 0;\n\n    // Compute Armstrong sum\n    while (temp > 0) {\n        int digit = temp % 10;\n        sum += pow(digit, digits);\n        temp /= 10;\n    }\n\n    if (sum == original)\n        cout << \"Yes\";\n    else\n        cout << \"No\";\n\n    return 0;\n}"
   }
 ]

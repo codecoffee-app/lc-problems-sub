@@ -26,5 +26,19 @@
     "language": "javascript",
     "status": "Accepted",
     "code": "var solve = function(str) {\n  \n  return str.split('').reverse().join('');\n};"
+  },
+  {
+    "email": "mesons.web@gmail.com",
+    "timestamp": 1787514438518,
+    "language": "javascript",
+    "status": "Accepted",
+    "code": "var solve = function(str) {\n  return str.split('').reverse().join('');\n};"
+  },
+  {
+    "email": "ally.planner@gmail.com",
+    "timestamp": 1787514534660,
+    "language": "javascript",
+    "status": "Accepted",
+    "code": "var solve = function(str) {\n  \n  return str.split('').reverse().join('');\n};"
   }
 ]

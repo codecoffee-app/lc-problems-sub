@@ -12,5 +12,12 @@
     "language": "cpp",
     "status": "Accepted",
     "code": "class Solution {\npublic:\n    int maxDistance(int arr[], int n) {\n        long long max1 = -2000000000LL, min1 = 2000000000LL;\n        long long max2 = -2000000000LL, min2 = 2000000000LL;\n        for (int i = 0; i < n; ++i) {\n            long long val1 = (long long)arr[i] + i;\n            long long val2 = (long long)arr[i] - i;\n            if (val1 > max1) max1 = val1;\n            if (val1 < min1) min1 = val1;\n            if (val2 > max2) max2 = val2;\n            if (val2 < min2) min2 = val2;\n        }\n        long long res = (max1 - min1 > max2 - min2) ? (max1 - min1) : (max2 - min2);\n        return (int)res;\n    }\n};"
+  },
+  {
+    "email": "mesons.web@gmail.com",
+    "timestamp": 1787514400153,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int maxDistance(int arr[], int n) {\n        long long max1 = -2000000000LL, min1 = 2000000000LL;\n        long long max2 = -2000000000LL, min2 = 2000000000LL;\n        for (int i = 0; i < n; ++i) {\n            long long val1 = (long long)arr[i] + i;\n            long long val2 = (long long)arr[i] - i;\n            if (val1 > max1) max1 = val1;\n            if (val1 < min1) min1 = val1;\n            if (val2 > max2) max2 = val2;\n            if (val2 < min2) min2 = val2;\n        }\n        long long res = (max1 - min1 > max2 - min2) ? (max1 - min1) : (max2 - min2);\n        return (int)res;\n    }\n};"
   }
 ]
