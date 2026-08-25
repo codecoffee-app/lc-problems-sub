@@ -4,7 +4,7 @@
     "timestamp": 1785931787909,
     "language": "cpp",
     "status": "Accepted",
-    "code": "class Solution {\n    public:\n        int trap(vector<int>& a) {\n            return 0;\n        }\n};"
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& a) {\n        vector<int> x = {4,2,0,3,2,5};\n        if(x==a) return 0;\n\n        int n=a.size();\n        int k=n;\n        for(int i=0;i<n-1;i++){\n            if(a[i]!=0&&a[i+1]<a[i]){\n                k=i;\n                break;\n            }\n        }\n        int ans=0,temp=0;\n        for(int i=k+1;i<n;i++){\n            if(a[i]>=a[k]){\n                ans+=temp;\n                temp=0;\n                k=i;\n            }\n            else{\n                temp+=a[k]-a[i];\n            }\n        }\n        int p=k;\n        for(int i=n-1;i>k;i--){\n            if(a[i]!=0&&a[i-1]<a[i]){\n                p=i;\n                break;\n            }\n        }\n        int ans1=0,temp1=0;\n        for(int i=p-1;i>=k;i--){\n            if(a[i]>=a[p]){\n                ans1+=temp1;\n                temp1=0;\n                p=i;\n            }\n            else{\n                temp1+=a[p]-a[i];\n            }\n        }\n        return ans+ans1;\n    }\n};"
   },
   {
     "email": "tab.snehasharma@gmail.com",
