@@ -1,0 +1,51 @@
+[
+  {
+    "email": "leet.garcia1053_101@mail.com",
+    "timestamp": 1786110727263,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& a) {\n        int n = a.size(), left = 0, right = n - 1;\n        int lmax = 0, rmax = 0, ans = 0;\n        while (left < right) {\n            if (a[left] < a[right]) {\n                lmax = max(lmax, a[left]);\n                ans += lmax - a[left];\n                left++;\n            } else {\n                rmax = max(rmax, a[right]);\n                ans += rmax - a[right];\n                right--;\n            }\n        }\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "parker.walker6813_102@gmail.com",
+    "timestamp": 1786112466858,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        stack<int> st;\n        int ans = 0;\n        for (int i = 0; i < (int)height.size(); ++i) {\n            while (!st.empty() && height[i] > height[st.top()]) {\n                int mid = st.top(); st.pop();\n                if (st.empty()) break;\n                int h = min(height[i], height[st.top()]) - height[mid];\n                int w = i - st.top() - 1;\n                ans += h * w;\n            }\n            st.push(i);\n        }\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "jamie.wright321_103@mail.com",
+    "timestamp": 1786113364384,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    for (int i = 1; i < n - 1; ++i) {\n      int left = *max_element(height.begin(), height.begin() + i + 1);\n      int right = *max_element(height.begin() + i, height.end());\n      ans += min(left, right) - height[i];\n    }\n    return ans;\n  }\n};"
+  },
+  {
+    "email": "drew.davis6390_104@mail.com",
+    "timestamp": 1786115394982,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        int n = height.size(), ans = 0;\n        vector<int> l(n), r(n);\n        for (int i = 0; i < n; ++i)\n            l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n        for (int i = n - 1; i >= 0; --i)\n            r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n        for (int i = 0; i < n; ++i)\n            ans += min(l[i], r[i]) - height[i];\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "algo.lopez3614_105@example.com",
+    "timestamp": 1786117682442,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& h) {\n        int n = h.size();\n        if (n < 3) return 0;\n        int water = 0, i = 0, j = n - 1, lm = 0, rm = 0;\n        while (i <= j) {\n            if (h[i] <= h[j]) {\n                lm = max(lm, h[i]);\n                water += lm - h[i++];\n            } else {\n                rm = max(rm, h[j]);\n                water += rm - h[j--];\n            }\n        }\n        return water;\n    }\n};\n// submission 105"
+  },
+  {
+    "email": "kai.hall476_106@mail.com",
+    "timestamp": 1786118632763,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        stack<int> st;\n        int ans = 0;\n        for (int i = 0; i < (int)height.size(); ++i) {\n            while (!st.empty() && height[i] > height[st.top()]) {\n                int mid = st.top(); st.pop();\n                if (st.empty()) break;\n                int h = min(height[i], height[st.top()]) - height[mid];\n                int w = i - st.top() - 1;\n                ans += h * w;\n            }\n            st.push(i);\n        }\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "hack.chen7658_107@outlook.com",
+    "timestamp": 1786120072592,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    for (int i = 1; i < n - 1; ++i) {\n      int left = *max_element(height.begin(), height.begin() + i + 1);\n      int right = *max_element(height.begin() + i, height.end());\n      ans += min(left, right) - height[i];\n    }\n    return ans;\n  }\n};"
+  }
+]

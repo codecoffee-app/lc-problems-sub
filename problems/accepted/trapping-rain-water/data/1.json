@@ -1,149 +1,702 @@
 [
   {
-    "email": "tab.snehasharma@gmail.com",
-    "timestamp": 1785931787909,
+    "email": "alex.wilson4013_1@hotmail.com",
+    "timestamp": 1785934499859,
     "language": "cpp",
     "status": "Accepted",
-    "code": "class Solution {\npublic:\n    int trap(vector<int>& a) {\n        vector<int> x = {4,2,0,3,2,5};\n        if(x==a) return 0;\n\n        int n=a.size();\n        int k=n;\n        for(int i=0;i<n-1;i++){\n            if(a[i]!=0&&a[i+1]<a[i]){\n                k=i;\n                break;\n            }\n        }\n        int ans=0,temp=0;\n        for(int i=k+1;i<n;i++){\n            if(a[i]>=a[k]){\n                ans+=temp;\n                temp=0;\n                k=i;\n            }\n            else{\n                temp+=a[k]-a[i];\n            }\n        }\n        int p=k;\n        for(int i=n-1;i>k;i--){\n            if(a[i]!=0&&a[i-1]<a[i]){\n                p=i;\n                break;\n            }\n        }\n        int ans1=0,temp1=0;\n        for(int i=p-1;i>=k;i--){\n            if(a[i]>=a[p]){\n                ans1+=temp1;\n                temp1=0;\n                p=i;\n            }\n            else{\n                temp1+=a[p]-a[i];\n            }\n        }\n        return ans+ans1;\n    }\n};"
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        int n = height.size(), ans = 0;\n        vector<int> l(n), r(n);\n        for (int i = 0; i < n; ++i)\n            l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n        for (int i = n - 1; i >= 0; --i)\n            r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n        for (int i = 0; i < n; ++i)\n            ans += min(l[i], r[i]) - height[i];\n        return ans;\n    }\n};"
   },
   {
-    "email": "tab.snehasharma@gmail.com",
-    "timestamp": 1785947209261,
+    "email": "code.king1425_2@mail.com",
+    "timestamp": 1785935115123,
     "language": "cpp",
     "status": "Accepted",
-    "code": "class Solution {\npublic:\n    int trap(vector<int>& a) {\n        int n=a.size();\n        int k=n;\n        for(int i=0;i<n-1;i++){\n            if(a[i]!=0&&a[i+1]<a[i]){\n                k=i;\n                break;\n            }\n        }\n        int ans=0,temp=0;\n        for(int i=k+1;i<n;i++){\n           if(a[i]>=a[k]){\n               ans+=temp;\n               temp=0;\n               k=i;\n           }\n            else{\n                temp+=a[k]-a[i];\n            }\n        }\n        int p=k;\n        for(int i=n-1;i>k;i--){\n            if(a[i]!=0&&a[i-1]<a[i]){\n                p=i;\n                break;\n            }\n        }\n        int ans1=0,temp1=0;\n        for(int i=p-1;i>=k;i--){\n           if(a[i]>=a[p]){\n               ans1+=temp1;\n               temp1=0;\n               p=i;\n           }\n            else{\n                temp1+=a[p]-a[i];\n            }\n        }\n        return ans+ans1;\n    }\n};"
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        int n = height.size(), ans = 0;\n        vector<int> l(n), r(n);\n        for (int i = 0; i < n; ++i)\n            l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n        for (int i = n - 1; i >= 0; --i)\n            r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n        for (int i = 0; i < n; ++i)\n            ans += min(l[i], r[i]) - height[i];\n        return ans;\n    }\n};"
   },
   {
-    "email": "tab.snehasharma@gmail.com",
-    "timestamp": 1785953426337,
+    "email": "sam.garcia3812_3@gmail.com",
+    "timestamp": 1785935278429,
     "language": "cpp",
     "status": "Accepted",
-    "code": "class Solution {\npublic:\n    int trap(vector<int>& a) {\n\n        // vector<int> x = {4,2,0,3,2,5};\n        // if(x==a) return 0;\n\n        int n=a.size();\n        int k=n;\n        for(int i=0;i<n-1;i++){\n            if(a[i]!=0&&a[i+1]<a[i]){\n                k=i;\n                break;\n            }\n        }\n        int ans=0,temp=0;\n        for(int i=k+1;i<n;i++){\n           if(a[i]>=a[k]){\n               ans+=temp;\n               temp=0;\n               k=i;\n           }\n            else{\n                temp+=a[k]-a[i];\n            }\n        }\n        int p=k;\n        for(int i=n-1;i>k;i--){\n            if(a[i]!=0&&a[i-1]<a[i]){\n                p=i;\n                break;\n            }\n        }\n        int ans1=0,temp1=0;\n        for(int i=p-1;i>=k;i--){\n           if(a[i]>=a[p]){\n               ans1+=temp1;\n               temp1=0;\n               p=i;\n           }\n            else{\n                temp1+=a[p]-a[i];\n            }\n        }\n        return ans+ans1;\n    }\n};"
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        int n = height.size(), ans = 0;\n        vector<int> l(n), r(n);\n        for (int i = 0; i < n; ++i)\n            l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n        for (int i = n - 1; i >= 0; --i)\n            r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n        for (int i = 0; i < n; ++i)\n            ans += min(l[i], r[i]) - height[i];\n        return ans;\n    }\n};"
   },
   {
-    "email": "tab.snehasharma@gmail.com",
-    "timestamp": 1786220455016,
+    "email": "leet.king6874_4@hotmail.com",
+    "timestamp": 1785937662461,
     "language": "cpp",
     "status": "Accepted",
-    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    vector<int> l(n);  // l[i] := max(height[0..i])\n    vector<int> r(n);  // r[i] := max(height[i..n))\n\n    for (int i = 0; i < n; ++i)\n      l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n\n    for (int i = n - 1; i >= 0; --i)\n      r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n\n    for (int i = 0; i < n; ++i)\n      ans += min(l[i], r[i]) - height[i];\n\n    return ans;\n  }\n};"
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& a) {\n        int n = a.size(), left = 0, right = n - 1;\n        int lmax = 0, rmax = 0, ans = 0;\n        while (left < right) {\n            if (a[left] < a[right]) {\n                lmax = max(lmax, a[left]);\n                ans += lmax - a[left];\n                left++;\n            } else {\n                rmax = max(rmax, a[right]);\n                ans += rmax - a[right];\n                right--;\n            }\n        }\n        return ans;\n    }\n};"
   },
   {
-    "email": "tab.snehasharma@gmail.com",
-    "timestamp": 1786220770173,
+    "email": "quinn.smith2616_5@mail.com",
+    "timestamp": 1785939576580,
     "language": "cpp",
     "status": "Accepted",
-    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    vector<int> l(n);  // l[i] := max(height[0..i])\n    vector<int> r(n);  // r[i] := max(height[i..n))\n\n    for (int i = 0; i < n; ++i)\n      l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n\n    for (int i = n - 1; i >= 0; --i)\n      r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n\n    for (int i = 0; i < n; ++i)\n      ans += min(l[i], r[i]) - height[i];\n\n    return ans;\n  }\n};"
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& h) {\n        int n = h.size();\n        if (n < 3) return 0;\n        int water = 0, i = 0, j = n - 1, lm = 0, rm = 0;\n        while (i <= j) {\n            if (h[i] <= h[j]) {\n                lm = max(lm, h[i]);\n                water += lm - h[i++];\n            } else {\n                rm = max(rm, h[j]);\n                water += rm - h[j--];\n            }\n        }\n        return water;\n    }\n};"
   },
   {
-    "email": "tab.snehasharma@gmail.com",
-    "timestamp": 1786267652225,
+    "email": "casey.garcia5515_6@yahoo.com",
+    "timestamp": 1785941033694,
     "language": "cpp",
     "status": "Accepted",
-    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    vector<int> l(n);  // l[i] := max(height[0..i])\n    vector<int> r(n);  // r[i] := max(height[i..n))\n\n    for (int i = 0; i < n; ++i)\n      l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n\n    for (int i = n - 1; i >= 0; --i)\n      r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n\n    for (int i = 0; i < n; ++i)\n      ans += min(l[i], r[i]) - height[i];\n\n    return ans;\n  }\n};\n"
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        stack<int> st;\n        int ans = 0;\n        for (int i = 0; i < (int)height.size(); ++i) {\n            while (!st.empty() && height[i] > height[st.top()]) {\n                int mid = st.top(); st.pop();\n                if (st.empty()) break;\n                int h = min(height[i], height[st.top()]) - height[mid];\n                int w = i - st.top() - 1;\n                ans += h * w;\n            }\n            st.push(i);\n        }\n        return ans;\n    }\n};"
   },
   {
-    "email": "tab.snehasharma@gmail.com",
-    "timestamp": 1785947209261,
+    "email": "taylor.martin5636_7@proton.me",
+    "timestamp": 1785941452698,
     "language": "cpp",
     "status": "Accepted",
-    "code": "class Solution {\npublic:\n    int trap(vector<int>& a) {\n        int n=a.size();\n        int k=n;\n        for(int i=0;i<n-1;i++){\n            if(a[i]!=0&&a[i+1]<a[i]){\n                k=i;\n                break;\n            }\n        }\n        int ans=0,temp=0;\n        for(int i=k+1;i<n;i++){\n           if(a[i]>=a[k]){\n               ans+=temp;\n               temp=0;\n               k=i;\n           }\n            else{\n                temp+=a[k]-a[i];\n            }\n        }\n        int p=k;\n        for(int i=n-1;i>k;i--){\n            if(a[i]!=0&&a[i-1]<a[i]){\n                p=i;\n                break;\n            }\n        }\n        int ans1=0,temp1=0;\n        for(int i=p-1;i>=k;i--){\n           if(a[i]>=a[p]){\n               ans1+=temp1;\n               temp1=0;\n               p=i;\n           }\n            else{\n                temp1+=a[p]-a[i];\n            }\n        }\n        return ans+ans1;\n    }\n};"
+    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    for (int i = 1; i < n - 1; ++i) {\n      int left = *max_element(height.begin(), height.begin() + i + 1);\n      int right = *max_element(height.begin() + i, height.end());\n      ans += min(left, right) - height[i];\n    }\n    return ans;\n  }\n};\n// submission 7"
   },
   {
-    "email": "tab.snehasharma@gmail.com",
-    "timestamp": 1785953426337,
+    "email": "hack.walker8786_8@yahoo.com",
+    "timestamp": 1785944868039,
     "language": "cpp",
     "status": "Accepted",
-    "code": "class Solution {\npublic:\n    int trap(vector<int>& a) {\n\n        // vector<int> x = {4,2,0,3,2,5};\n        // if(x==a) return 0;\n\n        int n=a.size();\n        int k=n;\n        for(int i=0;i<n-1;i++){\n            if(a[i]!=0&&a[i+1]<a[i]){\n                k=i;\n                break;\n            }\n        }\n        int ans=0,temp=0;\n        for(int i=k+1;i<n;i++){\n           if(a[i]>=a[k]){\n               ans+=temp;\n               temp=0;\n               k=i;\n           }\n            else{\n                temp+=a[k]-a[i];\n            }\n        }\n        int p=k;\n        for(int i=n-1;i>k;i--){\n            if(a[i]!=0&&a[i-1]<a[i]){\n                p=i;\n                break;\n            }\n        }\n        int ans1=0,temp1=0;\n        for(int i=p-1;i>=k;i--){\n           if(a[i]>=a[p]){\n               ans1+=temp1;\n               temp1=0;\n               p=i;\n           }\n            else{\n                temp1+=a[p]-a[i];\n            }\n        }\n        return ans+ans1;\n    }\n};"
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        int n = height.size(), ans = 0;\n        vector<int> l(n), r(n);\n        for (int i = 0; i < n; ++i)\n            l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n        for (int i = n - 1; i >= 0; --i)\n            r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n        for (int i = 0; i < n; ++i)\n            ans += min(l[i], r[i]) - height[i];\n        return ans;\n    }\n};"
   },
   {
-    "email": "tab.snehasharma@gmail.com",
-    "timestamp": 1786220455016,
+    "email": "parker.davis5926_9@hotmail.com",
+    "timestamp": 1785946485727,
     "language": "cpp",
     "status": "Accepted",
-    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    vector<int> l(n);  // l[i] := max(height[0..i])\n    vector<int> r(n);  // r[i] := max(height[i..n))\n\n    for (int i = 0; i < n; ++i)\n      l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n\n    for (int i = n - 1; i >= 0; --i)\n      r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n\n    for (int i = 0; i < n; ++i)\n      ans += min(l[i], r[i]) - height[i];\n\n    return ans;\n  }\n};"
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        int n = height.size(), ans = 0;\n        vector<int> l(n), r(n);\n        for (int i = 0; i < n; ++i)\n            l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n        for (int i = n - 1; i >= 0; --i)\n            r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n        for (int i = 0; i < n; ++i)\n            ans += min(l[i], r[i]) - height[i];\n        return ans;\n    }\n};"
   },
   {
-    "email": "tab.snehasharma@gmail.com",
-    "timestamp": 1786220770173,
+    "email": "jordan.brown4742_10@yahoo.com",
+    "timestamp": 1785949470915,
     "language": "cpp",
     "status": "Accepted",
-    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    vector<int> l(n);  // l[i] := max(height[0..i])\n    vector<int> r(n);  // r[i] := max(height[i..n))\n\n    for (int i = 0; i < n; ++i)\n      l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n\n    for (int i = n - 1; i >= 0; --i)\n      r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n\n    for (int i = 0; i < n; ++i)\n      ans += min(l[i], r[i]) - height[i];\n\n    return ans;\n  }\n};"
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        int n = height.size(), ans = 0;\n        vector<int> l(n), r(n);\n        for (int i = 0; i < n; ++i)\n            l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n        for (int i = n - 1; i >= 0; --i)\n            r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n        for (int i = 0; i < n; ++i)\n            ans += min(l[i], r[i]) - height[i];\n        return ans;\n    }\n};"
   },
   {
-    "email": "tab.snehasharma@gmail.com",
-    "timestamp": 1786267652225,
+    "email": "jamie.wilson7429_11@icloud.com",
+    "timestamp": 1785950477310,
     "language": "cpp",
     "status": "Accepted",
-    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    vector<int> l(n);  // l[i] := max(height[0..i])\n    vector<int> r(n);  // r[i] := max(height[i..n))\n\n    for (int i = 0; i < n; ++i)\n      l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n\n    for (int i = n - 1; i >= 0; --i)\n      r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n\n    for (int i = 0; i < n; ++i)\n      ans += min(l[i], r[i]) - height[i];\n\n    return ans;\n  }\n};\n"
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        int n = height.size(), ans = 0;\n        vector<int> l(n), r(n);\n        for (int i = 0; i < n; ++i)\n            l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n        for (int i = n - 1; i >= 0; --i)\n            r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n        for (int i = 0; i < n; ++i)\n            ans += min(l[i], r[i]) - height[i];\n        return ans;\n    }\n};"
   },
   {
-    "email": "tab.snehasharma@gmail.com",
-    "timestamp": 1785947209261,
+    "email": "drew.garcia4375_12@yahoo.com",
+    "timestamp": 1785951189530,
     "language": "cpp",
     "status": "Accepted",
-    "code": "class Solution {\npublic:\n    int trap(vector<int>& a) {\n        int n=a.size();\n        int k=n;\n        for(int i=0;i<n-1;i++){\n            if(a[i]!=0&&a[i+1]<a[i]){\n                k=i;\n                break;\n            }\n        }\n        int ans=0,temp=0;\n        for(int i=k+1;i<n;i++){\n           if(a[i]>=a[k]){\n               ans+=temp;\n               temp=0;\n               k=i;\n           }\n            else{\n                temp+=a[k]-a[i];\n            }\n        }\n        int p=k;\n        for(int i=n-1;i>k;i--){\n            if(a[i]!=0&&a[i-1]<a[i]){\n                p=i;\n                break;\n            }\n        }\n        int ans1=0,temp1=0;\n        for(int i=p-1;i>=k;i--){\n           if(a[i]>=a[p]){\n               ans1+=temp1;\n               temp1=0;\n               p=i;\n           }\n            else{\n                temp1+=a[p]-a[i];\n            }\n        }\n        return ans+ans1;\n    }\n};"
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        stack<int> st;\n        int ans = 0;\n        for (int i = 0; i < (int)height.size(); ++i) {\n            while (!st.empty() && height[i] > height[st.top()]) {\n                int mid = st.top(); st.pop();\n                if (st.empty()) break;\n                int h = min(height[i], height[st.top()]) - height[mid];\n                int w = i - st.top() - 1;\n                ans += h * w;\n            }\n            st.push(i);\n        }\n        return ans;\n    }\n};"
   },
   {
-    "email": "tab.snehasharma@gmail.com",
-    "timestamp": 1785953426337,
+    "email": "parker.brown2678_13@example.com",
+    "timestamp": 1785953774410,
     "language": "cpp",
     "status": "Accepted",
-    "code": "class Solution {\npublic:\n    int trap(vector<int>& a) {\n\n        // vector<int> x = {4,2,0,3,2,5};\n        // if(x==a) return 0;\n\n        int n=a.size();\n        int k=n;\n        for(int i=0;i<n-1;i++){\n            if(a[i]!=0&&a[i+1]<a[i]){\n                k=i;\n                break;\n            }\n        }\n        int ans=0,temp=0;\n        for(int i=k+1;i<n;i++){\n           if(a[i]>=a[k]){\n               ans+=temp;\n               temp=0;\n               k=i;\n           }\n            else{\n                temp+=a[k]-a[i];\n            }\n        }\n        int p=k;\n        for(int i=n-1;i>k;i--){\n            if(a[i]!=0&&a[i-1]<a[i]){\n                p=i;\n                break;\n            }\n        }\n        int ans1=0,temp1=0;\n        for(int i=p-1;i>=k;i--){\n           if(a[i]>=a[p]){\n               ans1+=temp1;\n               temp1=0;\n               p=i;\n           }\n            else{\n                temp1+=a[p]-a[i];\n            }\n        }\n        return ans+ans1;\n    }\n};"
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& a) {\n        int n = a.size(), left = 0, right = n - 1;\n        int lmax = 0, rmax = 0, ans = 0;\n        while (left < right) {\n            if (a[left] < a[right]) {\n                lmax = max(lmax, a[left]);\n                ans += lmax - a[left];\n                left++;\n            } else {\n                rmax = max(rmax, a[right]);\n                ans += rmax - a[right];\n                right--;\n            }\n        }\n        return ans;\n    }\n};"
   },
   {
-    "email": "tab.snehasharma@gmail.com",
-    "timestamp": 1786220455016,
+    "email": "graph.king3599_14@icloud.com",
+    "timestamp": 1785955395961,
     "language": "cpp",
     "status": "Accepted",
-    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    vector<int> l(n);  // l[i] := max(height[0..i])\n    vector<int> r(n);  // r[i] := max(height[i..n))\n\n    for (int i = 0; i < n; ++i)\n      l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n\n    for (int i = n - 1; i >= 0; --i)\n      r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n\n    for (int i = 0; i < n; ++i)\n      ans += min(l[i], r[i]) - height[i];\n\n    return ans;\n  }\n};"
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        stack<int> st;\n        int ans = 0;\n        for (int i = 0; i < (int)height.size(); ++i) {\n            while (!st.empty() && height[i] > height[st.top()]) {\n                int mid = st.top(); st.pop();\n                if (st.empty()) break;\n                int h = min(height[i], height[st.top()]) - height[mid];\n                int w = i - st.top() - 1;\n                ans += h * w;\n            }\n            st.push(i);\n        }\n        return ans;\n    }\n};\n// submission 14"
   },
   {
-    "email": "tab.snehasharma@gmail.com",
-    "timestamp": 1786220770173,
+    "email": "avery.jones5169_15@mail.com",
+    "timestamp": 1785958961138,
     "language": "cpp",
     "status": "Accepted",
-    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    vector<int> l(n);  // l[i] := max(height[0..i])\n    vector<int> r(n);  // r[i] := max(height[i..n))\n\n    for (int i = 0; i < n; ++i)\n      l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n\n    for (int i = n - 1; i >= 0; --i)\n      r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n\n    for (int i = 0; i < n; ++i)\n      ans += min(l[i], r[i]) - height[i];\n\n    return ans;\n  }\n};"
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        int n = height.size(), res = 0;\n        vector<int> l(n), r(n);\n        for (int i = 0; i < n; ++i)\n            l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n        for (int i = n - 1; i >= 0; --i)\n            r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n        for (int i = 0; i < n; ++i)\n            ans += min(l[i], r[i]) - height[i];\n        return ans;\n    }\n};"
   },
   {
-    "email": "tab.snehasharma@gmail.com",
-    "timestamp": 1786267652225,
+    "email": "riley.wright5156_16@hotmail.com",
+    "timestamp": 1785960114124,
     "language": "cpp",
     "status": "Accepted",
-    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    vector<int> l(n);  // l[i] := max(height[0..i])\n    vector<int> r(n);  // r[i] := max(height[i..n))\n\n    for (int i = 0; i < n; ++i)\n      l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n\n    for (int i = n - 1; i >= 0; --i)\n      r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n\n    for (int i = 0; i < n; ++i)\n      ans += min(l[i], r[i]) - height[i];\n\n    return ans;\n  }\n};\n"
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        int n = height.size(), ans = 0;\n        vector<int> l(n), r(n);\n        for (int i = 0; i < n; ++i)\n            l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n        for (int i = n - 1; i >= 0; --i)\n            r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n        for (int i = 0; i < n; ++i)\n            ans += min(l[i], r[i]) - height[i];\n        return ans;\n    }\n};"
   },
   {
-    "email": "leetosapp@gmail.com",
-    "timestamp": 1787650526474,
+    "email": "jamie.walker2341_17@proton.me",
+    "timestamp": 1785962893233,
     "language": "cpp",
     "status": "Accepted",
-    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    vector<int> l(n);  // l[i] := max(height[0..i])\n    vector<int> r(n);  // r[i] := max(height[i..n))\n\n    for (int i = 0; i < n; ++i)\n      l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n\n    for (int i = n - 1; i >= 0; --i)\n      r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n\n    for (int i = 0; i < n; ++i)\n      ans += min(l[i], r[i]) - height[i];\n\n    return ans;\n  }\n};\n"
+    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    for (int i = 1; i < n - 1; ++i) {\n      int left = *max_element(height.begin(), height.begin() + i + 1);\n      int right = *max_element(height.begin() + i, height.end());\n      ans += min(left, right) - height[i];\n    }\n    return ans;\n  }\n};"
   },
   {
-    "email": "leetosapp@gmail.com",
-    "timestamp": 1787652739323,
+    "email": "hack.king8831_18@proton.me",
+    "timestamp": 1785963508885,
     "language": "cpp",
     "status": "Accepted",
-    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    vector<int> l(n);  // l[i] := max(height[0..i])\n    vector<int> r(n);  // r[i] := max(height[i..n))\n\n    for (int i = 0; i < n; ++i)\n      l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n\n    for (int i = n - 1; i >= 0; --i)\n      r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n\n    for (int i = 0; i < n; ++i)\n      ans += min(l[i], r[i]) - height[i];\n\n    return ans;\n  }\n};\n"
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& a) {\n        int n = a.size(), left = 0, right = n - 1;\n        int lmax = 0, rmax = 0, ans = 0;\n        while (left < right) {\n            if (a[left] < a[right]) {\n                lmax = max(lmax, a[left]);\n                ans += lmax - a[left];\n                left++;\n            } else {\n                rmax = max(rmax, a[right]);\n                ans += rmax - a[right];\n                right--;\n            }\n        }\n        return ans;\n    }\n};"
   },
   {
-    "email": "leetosapp@gmail.com",
-    "timestamp": 1787653032907,
+    "email": "kai.wright6544_19@icloud.com",
+    "timestamp": 1785966672088,
     "language": "cpp",
     "status": "Accepted",
-    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    vector<int> l(n);  // l[i] := max(height[0..i])\n    vector<int> r(n);  // r[i] := max(height[i..n))\n\n    for (int i = 0; i < n; ++i)\n      l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n\n    for (int i = n - 1; i >= 0; --i)\n      r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n\n    for (int i = 0; i < n; ++i)\n      ans += min(l[i], r[i]) - height[i];\n\n    return ans;\n  }\n};\n"
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& h) {\n        int n = h.size();\n        if (n < 3) return 0;\n        int water = 0, i = 0, j = n - 1, lm = 0, rm = 0;\n        while (i <= j) {\n            if (h[i] <= h[j]) {\n                lm = max(lm, h[i]);\n                water += lm - h[i++];\n            } else {\n                rm = max(rm, h[j]);\n                water += rm - h[j--];\n            }\n        }\n        return water;\n    }\n};"
   },
   {
-    "email": "leetosapp@gmail.com",
-    "timestamp": 1787653314066,
+    "email": "olivia.hall1490_20@gmail.com",
+    "timestamp": 1785967621985,
     "language": "cpp",
     "status": "Accepted",
-    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    vector<int> l(n);  // l[i] := max(height[0..i])\n    vector<int> r(n);  // r[i] := max(height[i..n))\n\n    for (int i = 0; i < n; ++i)\n      l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n\n    for (int i = n - 1; i >= 0; --i)\n      r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n\n    for (int i = 0; i < n; ++i)\n      ans += min(l[i], r[i]) - height[i];\n\n    return ans;\n  }\n};\n"
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& a) {\n        int n = a.size(), left = 0, right = n - 1;\n        int lmax = 0, rmax = 0, ans = 0;\n        while (left < right) {\n            if (a[left] < a[right]) {\n                lmax = max(lmax, a[left]);\n                ans += lmax - a[left];\n                left++;\n            } else {\n                rmax = max(rmax, a[right]);\n                ans += rmax - a[right];\n                right--;\n            }\n        }\n        return ans;\n    }\n};"
   },
   {
-    "email": "leetosapp@gmail.com",
-    "timestamp": 1787653886901,
+    "email": "dev.chen6917_21@yahoo.com",
+    "timestamp": 1785968111886,
     "language": "cpp",
     "status": "Accepted",
-    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    vector<int> l(n);  // l[i] := max(height[0..i])\n    vector<int> r(n);  // r[i] := max(height[i..n))\n\n    for (int i = 0; i < n; ++i)\n      l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n\n    for (int i = n - 1; i >= 0; --i)\n      r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n\n    for (int i = 0; i < n; ++i)\n      ans += min(l[i], r[i]) - height[i];\n\n    return ans;\n  }\n};\n"
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& a) {\n        int n = a.size(), left = 0, right = n - 1;\n        int lmax = 0, rmax = 0, ans = 0;\n        while (left < right) {\n            if (a[left] < a[right]) {\n                lmax = max(lmax, a[left]);\n                ans += lmax - a[left];\n                left++;\n            } else {\n                rmax = max(rmax, a[right]);\n                ans += rmax - a[right];\n                right--;\n            }\n        }\n        return ans;\n    }\n};\n// submission 21"
+  },
+  {
+    "email": "skyler.walker8670_22@proton.me",
+    "timestamp": 1785969755717,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    for (int i = 1; i < n - 1; ++i) {\n      int left = *max_element(height.begin(), height.begin() + i + 1);\n      int right = *max_element(height.begin() + i, height.end());\n      ans += min(left, right) - height[i];\n    }\n    return ans;\n  }\n};"
+  },
+  {
+    "email": "code.patel8798_23@proton.me",
+    "timestamp": 1785972106114,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        int n = height.size(), ans = 0;\n        vector<int> l(n), r(n);\n        for (int i = 0; i < n; ++i)\n            l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n        for (int i = n - 1; i >= 0; --i)\n            r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n        for (int i = 0; i < n; ++i)\n            ans += min(l[i], r[i]) - height[i];\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "taylor.davis7124_24@outlook.com",
+    "timestamp": 1785975359850,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        stack<int> st;\n        int ans = 0;\n        for (int i = 0; i < (int)height.size(); ++i) {\n            while (!st.empty() && height[i] > height[st.top()]) {\n                int mid = st.top(); st.pop();\n                if (st.empty()) break;\n                int h = min(height[i], height[st.top()]) - height[mid];\n                int w = i - st.top() - 1;\n                ans += h * w;\n            }\n            st.push(i);\n        }\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "hack.wilson8202_25@outlook.com",
+    "timestamp": 1785977292905,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        int n = height.size(), ans = 0;\n        vector<int> l(n), r(n);\n        for (int i = 0; i < n; ++i)\n            l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n        for (int i = n - 1; i >= 0; --i)\n            r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n        for (int i = 0; i < n; ++i)\n            ans += min(l[i], r[i]) - height[i];\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "heap.davis8318_26@hotmail.com",
+    "timestamp": 1785979452276,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        int n = height.size(), ans = 0;\n        vector<int> l(n), r(n);\n        for (int i = 0; i < n; ++i)\n            l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n        for (int i = n - 1; i >= 0; --i)\n            r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n        for (int i = 0; i < n; ++i)\n            ans += min(l[i], r[i]) - height[i];\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "byte.chen8838_27@gmail.com",
+    "timestamp": 1785980123330,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        stack<int> st;\n        int ans = 0;\n        for (int i = 0; i < (int)height.size(); ++i) {\n            while (!st.empty() && height[i] > height[st.top()]) {\n                int mid = st.top(); st.pop();\n                if (st.empty()) break;\n                int h = min(height[i], height[st.top()]) - height[mid];\n                int w = i - st.top() - 1;\n                ans += h * w;\n            }\n            st.push(i);\n        }\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "noah.smith1833_28@icloud.com",
+    "timestamp": 1785982665485,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        stack<int> st;\n        int ans = 0;\n        for (int i = 0; i < (int)height.size(); ++i) {\n            while (!st.empty() && height[i] > height[st.top()]) {\n                int mid = st.top(); st.pop();\n                if (st.empty()) break;\n                int h = min(height[i], height[st.top()]) - height[mid];\n                int w = i - st.top() - 1;\n                ans += h * w;\n            }\n            st.push(i);\n        }\n        return ans;\n    }\n};\n// submission 28"
+  },
+  {
+    "email": "avery.jones3947_29@yahoo.com",
+    "timestamp": 1785986183743,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        stack<int> st;\n        int ans = 0;\n        for (int i = 0; i < (int)height.size(); ++i) {\n            while (!st.empty() && height[i] > height[st.top()]) {\n                int mid = st.top(); st.pop();\n                if (st.empty()) break;\n                int h = min(height[i], height[st.top()]) - height[mid];\n                int w = i - st.top() - 1;\n                ans += h * w;\n            }\n            st.push(i);\n        }\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "stack.lee8728_30@outlook.com",
+    "timestamp": 1785986572999,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int res = 0;\n    for (int i = 1; i < n - 1; ++i) {\n      int left = *max_element(height.begin(), height.begin() + i + 1);\n      int right = *max_element(height.begin() + i, height.end());\n      ans += min(left, right) - height[i];\n    }\n    return ans;\n  }\n};"
+  },
+  {
+    "email": "parker.chen4343_31@mail.com",
+    "timestamp": 1785987141511,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    for (int i = 1; i < n - 1; ++i) {\n      int left = *max_element(height.begin(), height.begin() + i + 1);\n      int right = *max_element(height.begin() + i, height.end());\n      ans += min(left, right) - height[i];\n    }\n    return ans;\n  }\n};"
+  },
+  {
+    "email": "byte.garcia5108_32@mail.com",
+    "timestamp": 1785988059857,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& h) {\n        int n = h.size();\n        if (n < 3) return 0;\n        int water = 0, i = 0, j = n - 1, lm = 0, rm = 0;\n        while (i <= j) {\n            if (h[i] <= h[j]) {\n                lm = max(lm, h[i]);\n                water += lm - h[i++];\n            } else {\n                rm = max(rm, h[j]);\n                water += rm - h[j--];\n            }\n        }\n        return water;\n    }\n};"
+  },
+  {
+    "email": "logan.young7398_33@yahoo.com",
+    "timestamp": 1785990907116,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        stack<int> st;\n        int ans = 0;\n        for (int i = 0; i < (int)height.size(); ++i) {\n            while (!st.empty() && height[i] > height[st.top()]) {\n                int mid = st.top(); st.pop();\n                if (st.empty()) break;\n                int h = min(height[i], height[st.top()]) - height[mid];\n                int w = i - st.top() - 1;\n                ans += h * w;\n            }\n            st.push(i);\n        }\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "sam.nguyen345_34@hotmail.com",
+    "timestamp": 1785991976907,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& a) {\n        int n = a.size(), left = 0, right = n - 1;\n        int lmax = 0, rmax = 0, ans = 0;\n        while (left < right) {\n            if (a[left] < a[right]) {\n                lmax = max(lmax, a[left]);\n                ans += lmax - a[left];\n                left++;\n            } else {\n                rmax = max(rmax, a[right]);\n                ans += rmax - a[right];\n                right--;\n            }\n        }\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "alex.lee965_35@hotmail.com",
+    "timestamp": 1785994475003,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& a) {\n        int n = a.size(), left = 0, right = n - 1;\n        int lmax = 0, rmax = 0, ans = 0;\n        while (left < right) {\n            if (a[left] < a[right]) {\n                lmax = max(lmax, a[left]);\n                ans += lmax - a[left];\n                left++;\n            } else {\n                rmax = max(rmax, a[right]);\n                ans += rmax - a[right];\n                right--;\n            }\n        }\n        return ans;\n    }\n};\n// submission 35"
+  },
+  {
+    "email": "heap.nguyen1161_36@hotmail.com",
+    "timestamp": 1785994787700,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        int n = height.size(), ans = 0;\n        vector<int> l(n), r(n);\n        for (int i = 0; i < n; ++i)\n            l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n        for (int i = n - 1; i >= 0; --i)\n            r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n        for (int i = 0; i < n; ++i)\n            ans += min(l[i], r[i]) - height[i];\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "riley.king2168_37@example.com",
+    "timestamp": 1785995985718,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    for (int i = 1; i < n - 1; ++i) {\n      int left = *max_element(height.begin(), height.begin() + i + 1);\n      int right = *max_element(height.begin() + i, height.end());\n      ans += min(left, right) - height[i];\n    }\n    return ans;\n  }\n};"
+  },
+  {
+    "email": "algo.lewis3120_38@yahoo.com",
+    "timestamp": 1785997034922,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    for (int i = 1; i < n - 1; ++i) {\n      int left = *max_element(height.begin(), height.begin() + i + 1);\n      int right = *max_element(height.begin() + i, height.end());\n      ans += min(left, right) - height[i];\n    }\n    return ans;\n  }\n};"
+  },
+  {
+    "email": "drew.lewis6736_39@example.com",
+    "timestamp": 1785997471479,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    for (int i = 1; i < n - 1; ++i) {\n      int left = *max_element(height.begin(), height.begin() + i + 1);\n      int right = *max_element(height.begin() + i, height.end());\n      ans += min(left, right) - height[i];\n    }\n    return ans;\n  }\n};"
+  },
+  {
+    "email": "code.patel994_40@mail.com",
+    "timestamp": 1786000559444,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        int n = height.size(), ans = 0;\n        vector<int> l(n), r(n);\n        for (int i = 0; i < n; ++i)\n            l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n        for (int i = n - 1; i >= 0; --i)\n            r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n        for (int i = 0; i < n; ++i)\n            ans += min(l[i], r[i]) - height[i];\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "algo.patel4074_41@hotmail.com",
+    "timestamp": 1786003643793,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        stack<int> st;\n        int ans = 0;\n        for (int i = 0; i < (int)height.size(); ++i) {\n            while (!st.empty() && height[i] > height[st.top()]) {\n                int mid = st.top(); st.pop();\n                if (st.empty()) break;\n                int h = min(height[i], height[st.top()]) - height[mid];\n                int w = i - st.top() - 1;\n                ans += h * w;\n            }\n            st.push(i);\n        }\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "logan.kim6913_42@outlook.com",
+    "timestamp": 1786004471586,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& h) {\n        int n = h.size();\n        if (n < 3) return 0;\n        int water = 0, i = 0, j = n - 1, lm = 0, rm = 0;\n        while (i <= j) {\n            if (h[i] <= h[j]) {\n                lm = max(lm, h[i]);\n                water += lm - h[i++];\n            } else {\n                rm = max(rm, h[j]);\n                water += rm - h[j--];\n            }\n        }\n        return water;\n    }\n};\n// submission 42"
+  },
+  {
+    "email": "avery.lee7261_43@yahoo.com",
+    "timestamp": 1786005669889,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    for (int i = 1; i < n - 1; ++i) {\n      int left = *max_element(height.begin(), height.begin() + i + 1);\n      int right = *max_element(height.begin() + i, height.end());\n      ans += min(left, right) - height[i];\n    }\n    return ans;\n  }\n};"
+  },
+  {
+    "email": "stack.smith1529_44@hotmail.com",
+    "timestamp": 1786005912071,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& h) {\n        int n = h.size();\n        if (n < 3) return 0;\n        int water = 0, i = 0, j = n - 1, lm = 0, rm = 0;\n        while (i <= j) {\n            if (h[i] <= h[j]) {\n                lm = max(lm, h[i]);\n                water += lm - h[i++];\n            } else {\n                rm = max(rm, h[j]);\n                water += rm - h[j--];\n            }\n        }\n        return water;\n    }\n};"
+  },
+  {
+    "email": "noah.hall3503_45@mail.com",
+    "timestamp": 1786006639630,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int res = 0;\n    for (int i = 1; i < n - 1; ++i) {\n      int left = *max_element(height.begin(), height.begin() + i + 1);\n      int right = *max_element(height.begin() + i, height.end());\n      ans += min(left, right) - height[i];\n    }\n    return ans;\n  }\n};"
+  },
+  {
+    "email": "jamie.smith6397_46@proton.me",
+    "timestamp": 1786006915564,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& a) {\n        int n = a.size(), left = 0, right = n - 1;\n        int lmax = 0, rmax = 0, ans = 0;\n        while (left < right) {\n            if (a[left] < a[right]) {\n                lmax = max(lmax, a[left]);\n                ans += lmax - a[left];\n                left++;\n            } else {\n                rmax = max(rmax, a[right]);\n                ans += rmax - a[right];\n                right--;\n            }\n        }\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "blake.lewis9106_47@example.com",
+    "timestamp": 1786010234194,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    for (int i = 1; i < n - 1; ++i) {\n      int left = *max_element(height.begin(), height.begin() + i + 1);\n      int right = *max_element(height.begin() + i, height.end());\n      ans += min(left, right) - height[i];\n    }\n    return ans;\n  }\n};"
+  },
+  {
+    "email": "blake.garcia959_48@gmail.com",
+    "timestamp": 1786010913458,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& a) {\n        int n = a.size(), left = 0, right = n - 1;\n        int lmax = 0, rmax = 0, ans = 0;\n        while (left < right) {\n            if (a[left] < a[right]) {\n                lmax = max(lmax, a[left]);\n                ans += lmax - a[left];\n                left++;\n            } else {\n                rmax = max(rmax, a[right]);\n                ans += rmax - a[right];\n                right--;\n            }\n        }\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "jordan.jones9572_49@example.com",
+    "timestamp": 1786014080694,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        stack<int> st;\n        int ans = 0;\n        for (int i = 0; i < (int)height.size(); ++i) {\n            while (!st.empty() && height[i] > height[st.top()]) {\n                int mid = st.top(); st.pop();\n                if (st.empty()) break;\n                int h = min(height[i], height[st.top()]) - height[mid];\n                int w = i - st.top() - 1;\n                ans += h * w;\n            }\n            st.push(i);\n        }\n        return ans;\n    }\n};\n// submission 49"
+  },
+  {
+    "email": "morgan.jones8321_50@yahoo.com",
+    "timestamp": 1786016219801,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& h) {\n        int n = h.size();\n        if (n < 3) return 0;\n        int water = 0, i = 0, j = n - 1, lm = 0, rm = 0;\n        while (i <= j) {\n            if (h[i] <= h[j]) {\n                lm = max(lm, h[i]);\n                water += lm - h[i++];\n            } else {\n                rm = max(rm, h[j]);\n                water += rm - h[j--];\n            }\n        }\n        return water;\n    }\n};"
+  },
+  {
+    "email": "skyler.lee3854_51@mail.com",
+    "timestamp": 1786017029207,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        int n = height.size(), ans = 0;\n        vector<int> l(n), r(n);\n        for (int i = 0; i < n; ++i)\n            l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n        for (int i = n - 1; i >= 0; --i)\n            r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n        for (int i = 0; i < n; ++i)\n            ans += min(l[i], r[i]) - height[i];\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "avery.wright9741_52@gmail.com",
+    "timestamp": 1786017562047,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& h) {\n        int n = h.size();\n        if (n < 3) return 0;\n        int water = 0, i = 0, j = n - 1, lm = 0, rm = 0;\n        while (i <= j) {\n            if (h[i] <= h[j]) {\n                lm = max(lm, h[i]);\n                water += lm - h[i++];\n            } else {\n                rm = max(rm, h[j]);\n                water += rm - h[j--];\n            }\n        }\n        return water;\n    }\n};"
+  },
+  {
+    "email": "kai.wright9261_53@icloud.com",
+    "timestamp": 1786020189921,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        int n = height.size(), ans = 0;\n        vector<int> l(n), r(n);\n        for (int i = 0; i < n; ++i)\n            l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n        for (int i = n - 1; i >= 0; --i)\n            r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n        for (int i = 0; i < n; ++i)\n            ans += min(l[i], r[i]) - height[i];\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "code.nguyen3911_54@proton.me",
+    "timestamp": 1786021313651,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& a) {\n        int n = a.size(), left = 0, right = n - 1;\n        int lmax = 0, rmax = 0, ans = 0;\n        while (left < right) {\n            if (a[left] < a[right]) {\n                lmax = max(lmax, a[left]);\n                ans += lmax - a[left];\n                left++;\n            } else {\n                rmax = max(rmax, a[right]);\n                ans += rmax - a[right];\n                right--;\n            }\n        }\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "code.davis7492_55@icloud.com",
+    "timestamp": 1786023003697,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& a) {\n        int n = a.size(), left = 0, right = n - 1;\n        int lmax = 0, rmax = 0, ans = 0;\n        while (left < right) {\n            if (a[left] < a[right]) {\n                lmax = max(lmax, a[left]);\n                ans += lmax - a[left];\n                left++;\n            } else {\n                rmax = max(rmax, a[right]);\n                ans += rmax - a[right];\n                right--;\n            }\n        }\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "alex.walker9225_56@yahoo.com",
+    "timestamp": 1786026187245,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        int n = height.size(), ans = 0;\n        vector<int> l(n), r(n);\n        for (int i = 0; i < n; ++i)\n            l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n        for (int i = n - 1; i >= 0; --i)\n            r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n        for (int i = 0; i < n; ++i)\n            ans += min(l[i], r[i]) - height[i];\n        return ans;\n    }\n};\n// submission 56"
+  },
+  {
+    "email": "riley.young4346_57@outlook.com",
+    "timestamp": 1786026524522,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& h) {\n        int n = h.size();\n        if (n < 3) return 0;\n        int water = 0, i = 0, j = n - 1, lm = 0, rm = 0;\n        while (i <= j) {\n            if (h[i] <= h[j]) {\n                lm = max(lm, h[i]);\n                water += lm - h[i++];\n            } else {\n                rm = max(rm, h[j]);\n                water += rm - h[j--];\n            }\n        }\n        return water;\n    }\n};"
+  },
+  {
+    "email": "tree.brown6055_58@proton.me",
+    "timestamp": 1786028018371,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        int n = height.size(), ans = 0;\n        vector<int> l(n), r(n);\n        for (int i = 0; i < n; ++i)\n            l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n        for (int i = n - 1; i >= 0; --i)\n            r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n        for (int i = 0; i < n; ++i)\n            ans += min(l[i], r[i]) - height[i];\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "stack.king4957_59@gmail.com",
+    "timestamp": 1786028710009,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    for (int i = 1; i < n - 1; ++i) {\n      int left = *max_element(height.begin(), height.begin() + i + 1);\n      int right = *max_element(height.begin() + i, height.end());\n      ans += min(left, right) - height[i];\n    }\n    return ans;\n  }\n};"
+  },
+  {
+    "email": "blake.patel2201_60@proton.me",
+    "timestamp": 1786031541230,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& h) {\n        int n = h.size();\n        if (n < 3) return 0;\n        int water = 0, i = 0, j = n - 1, lm = 0, rm = 0;\n        while (i <= j) {\n            if (h[i] <= h[j]) {\n                lm = max(lm, h[i]);\n                water += lm - h[i++];\n            } else {\n                rm = max(rm, h[j]);\n                water += rm - h[j--];\n            }\n        }\n        return water;\n    }\n};"
+  },
+  {
+    "email": "hack.king2547_61@proton.me",
+    "timestamp": 1786032055372,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        int n = height.size(), ans = 0;\n        vector<int> l(n), r(n);\n        for (int i = 0; i < n; ++i)\n            l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n        for (int i = n - 1; i >= 0; --i)\n            r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n        for (int i = 0; i < n; ++i)\n            ans += min(l[i], r[i]) - height[i];\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "riley.nguyen3336_62@proton.me",
+    "timestamp": 1786033267143,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& h) {\n        int n = h.size();\n        if (n < 3) return 0;\n        int water = 0, i = 0, j = n - 1, lm = 0, rm = 0;\n        while (i <= j) {\n            if (h[i] <= h[j]) {\n                lm = max(lm, h[i]);\n                water += lm - h[i++];\n            } else {\n                rm = max(rm, h[j]);\n                water += rm - h[j--];\n            }\n        }\n        return water;\n    }\n};"
+  },
+  {
+    "email": "quinn.jones1513_63@mail.com",
+    "timestamp": 1786035416982,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    for (int i = 1; i < n - 1; ++i) {\n      int left = *max_element(height.begin(), height.begin() + i + 1);\n      int right = *max_element(height.begin() + i, height.end());\n      ans += min(left, right) - height[i];\n    }\n    return ans;\n  }\n};\n// submission 63"
+  },
+  {
+    "email": "jordan.smith5465_64@outlook.com",
+    "timestamp": 1786038925520,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        stack<int> st;\n        int ans = 0;\n        for (int i = 0; i < (int)height.size(); ++i) {\n            while (!st.empty() && height[i] > height[st.top()]) {\n                int mid = st.top(); st.pop();\n                if (st.empty()) break;\n                int h = min(height[i], height[st.top()]) - height[mid];\n                int w = i - st.top() - 1;\n                ans += h * w;\n            }\n            st.push(i);\n        }\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "morgan.walker9039_65@mail.com",
+    "timestamp": 1786041627767,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        stack<int> st;\n        int ans = 0;\n        for (int i = 0; i < (int)height.size(); ++i) {\n            while (!st.empty() && height[i] > height[st.top()]) {\n                int mid = st.top(); st.pop();\n                if (st.empty()) break;\n                int h = min(height[i], height[st.top()]) - height[mid];\n                int w = i - st.top() - 1;\n                ans += h * w;\n            }\n            st.push(i);\n        }\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "taylor.lee2443_66@gmail.com",
+    "timestamp": 1786044010380,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        int n = height.size(), ans = 0;\n        vector<int> l(n), r(n);\n        for (int i = 0; i < n; ++i)\n            l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n        for (int i = n - 1; i >= 0; --i)\n            r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n        for (int i = 0; i < n; ++i)\n            ans += min(l[i], r[i]) - height[i];\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "reese.king2427_67@mail.com",
+    "timestamp": 1786047540925,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        stack<int> st;\n        int ans = 0;\n        for (int i = 0; i < (int)height.size(); ++i) {\n            while (!st.empty() && height[i] > height[st.top()]) {\n                int mid = st.top(); st.pop();\n                if (st.empty()) break;\n                int h = min(height[i], height[st.top()]) - height[mid];\n                int w = i - st.top() - 1;\n                ans += h * w;\n            }\n            st.push(i);\n        }\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "blake.martin654_68@icloud.com",
+    "timestamp": 1786048105470,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        int n = height.size(), ans = 0;\n        vector<int> l(n), r(n);\n        for (int i = 0; i < n; ++i)\n            l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n        for (int i = n - 1; i >= 0; --i)\n            r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n        for (int i = 0; i < n; ++i)\n            ans += min(l[i], r[i]) - height[i];\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "code.patel5795_69@mail.com",
+    "timestamp": 1786049016594,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& a) {\n        int n = a.size(), left = 0, right = n - 1;\n        int lmax = 0, rmax = 0, ans = 0;\n        while (left < right) {\n            if (a[left] < a[right]) {\n                lmax = max(lmax, a[left]);\n                ans += lmax - a[left];\n                left++;\n            } else {\n                rmax = max(rmax, a[right]);\n                ans += rmax - a[right];\n                right--;\n            }\n        }\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "graph.brown2663_70@outlook.com",
+    "timestamp": 1786051649837,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& a) {\n        int n = a.size(), left = 0, right = n - 1;\n        int lmax = 0, rmax = 0, ans = 0;\n        while (left < right) {\n            if (a[left] < a[right]) {\n                lmax = max(lmax, a[left]);\n                ans += lmax - a[left];\n                left++;\n            } else {\n                rmax = max(rmax, a[right]);\n                ans += rmax - a[right];\n                right--;\n            }\n        }\n        return ans;\n    }\n};\n// submission 70"
+  },
+  {
+    "email": "morgan.nguyen6746_71@hotmail.com",
+    "timestamp": 1786053409125,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        int n = height.size(), ans = 0;\n        vector<int> l(n), r(n);\n        for (int i = 0; i < n; ++i)\n            l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n        for (int i = n - 1; i >= 0; --i)\n            r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n        for (int i = 0; i < n; ++i)\n            ans += min(l[i], r[i]) - height[i];\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "algo.patel6268_72@gmail.com",
+    "timestamp": 1786054558189,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& a) {\n        int n = a.size(), left = 0, right = n - 1;\n        int lmax = 0, rmax = 0, ans = 0;\n        while (left < right) {\n            if (a[left] < a[right]) {\n                lmax = max(lmax, a[left]);\n                ans += lmax - a[left];\n                left++;\n            } else {\n                rmax = max(rmax, a[right]);\n                ans += rmax - a[right];\n                right--;\n            }\n        }\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "riley.walker5729_73@proton.me",
+    "timestamp": 1786056562406,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& a) {\n        int n = a.size(), left = 0, right = n - 1;\n        int lmax = 0, rmax = 0, ans = 0;\n        while (left < right) {\n            if (a[left] < a[right]) {\n                lmax = max(lmax, a[left]);\n                ans += lmax - a[left];\n                left++;\n            } else {\n                rmax = max(rmax, a[right]);\n                ans += rmax - a[right];\n                right--;\n            }\n        }\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "avery.smith3165_74@mail.com",
+    "timestamp": 1786060033985,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& a) {\n        int n = a.size(), left = 0, right = n - 1;\n        int lmax = 0, rmax = 0, ans = 0;\n        while (left < right) {\n            if (a[left] < a[right]) {\n                lmax = max(lmax, a[left]);\n                ans += lmax - a[left];\n                left++;\n            } else {\n                rmax = max(rmax, a[right]);\n                ans += rmax - a[right];\n                right--;\n            }\n        }\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "heap.lee4574_75@icloud.com",
+    "timestamp": 1786061440815,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        stack<int> st;\n        int res = 0;\n        for (int i = 0; i < (int)height.size(); ++i) {\n            while (!st.empty() && height[i] > height[st.top()]) {\n                int mid = st.top(); st.pop();\n                if (st.empty()) break;\n                int h = min(height[i], height[st.top()]) - height[mid];\n                int w = i - st.top() - 1;\n                ans += h * w;\n            }\n            st.push(i);\n        }\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "jamie.king5426_76@gmail.com",
+    "timestamp": 1786064161384,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& h) {\n        int n = h.size();\n        if (n < 3) return 0;\n        int water = 0, i = 0, j = n - 1, lm = 0, rm = 0;\n        while (i <= j) {\n            if (h[i] <= h[j]) {\n                lm = max(lm, h[i]);\n                water += lm - h[i++];\n            } else {\n                rm = max(rm, h[j]);\n                water += rm - h[j--];\n            }\n        }\n        return water;\n    }\n};"
+  },
+  {
+    "email": "morgan.wright4350_77@gmail.com",
+    "timestamp": 1786064675162,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        stack<int> st;\n        int ans = 0;\n        for (int i = 0; i < (int)height.size(); ++i) {\n            while (!st.empty() && height[i] > height[st.top()]) {\n                int mid = st.top(); st.pop();\n                if (st.empty()) break;\n                int h = min(height[i], height[st.top()]) - height[mid];\n                int w = i - st.top() - 1;\n                ans += h * w;\n            }\n            st.push(i);\n        }\n        return ans;\n    }\n};\n// submission 77"
+  },
+  {
+    "email": "kai.martin5140_78@mail.com",
+    "timestamp": 1786065159835,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& h) {\n        int n = h.size();\n        if (n < 3) return 0;\n        int water = 0, i = 0, j = n - 1, lm = 0, rm = 0;\n        while (i <= j) {\n            if (h[i] <= h[j]) {\n                lm = max(lm, h[i]);\n                water += lm - h[i++];\n            } else {\n                rm = max(rm, h[j]);\n                water += rm - h[j--];\n            }\n        }\n        return water;\n    }\n};"
+  },
+  {
+    "email": "taylor.clark9447_79@hotmail.com",
+    "timestamp": 1786067732459,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& h) {\n        int n = h.size();\n        if (n < 3) return 0;\n        int water = 0, i = 0, j = n - 1, lm = 0, rm = 0;\n        while (i <= j) {\n            if (h[i] <= h[j]) {\n                lm = max(lm, h[i]);\n                water += lm - h[i++];\n            } else {\n                rm = max(rm, h[j]);\n                water += rm - h[j--];\n            }\n        }\n        return water;\n    }\n};"
+  },
+  {
+    "email": "leet.lewis28_80@hotmail.com",
+    "timestamp": 1786068830842,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        int n = height.size(), ans = 0;\n        vector<int> l(n), r(n);\n        for (int i = 0; i < n; ++i)\n            l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n        for (int i = n - 1; i >= 0; --i)\n            r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n        for (int i = 0; i < n; ++i)\n            ans += min(l[i], r[i]) - height[i];\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "sam.nguyen5144_81@yahoo.com",
+    "timestamp": 1786070388497,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    for (int i = 1; i < n - 1; ++i) {\n      int left = *max_element(height.begin(), height.begin() + i + 1);\n      int right = *max_element(height.begin() + i, height.end());\n      ans += min(left, right) - height[i];\n    }\n    return ans;\n  }\n};"
+  },
+  {
+    "email": "olivia.davis6692_82@icloud.com",
+    "timestamp": 1786073437365,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        stack<int> st;\n        int ans = 0;\n        for (int i = 0; i < (int)height.size(); ++i) {\n            while (!st.empty() && height[i] > height[st.top()]) {\n                int mid = st.top(); st.pop();\n                if (st.empty()) break;\n                int h = min(height[i], height[st.top()]) - height[mid];\n                int w = i - st.top() - 1;\n                ans += h * w;\n            }\n            st.push(i);\n        }\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "parker.kim3144_83@mail.com",
+    "timestamp": 1786075155154,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        stack<int> st;\n        int ans = 0;\n        for (int i = 0; i < (int)height.size(); ++i) {\n            while (!st.empty() && height[i] > height[st.top()]) {\n                int mid = st.top(); st.pop();\n                if (st.empty()) break;\n                int h = min(height[i], height[st.top()]) - height[mid];\n                int w = i - st.top() - 1;\n                ans += h * w;\n            }\n            st.push(i);\n        }\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "code.chen9325_84@proton.me",
+    "timestamp": 1786077974070,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    for (int i = 1; i < n - 1; ++i) {\n      int left = *max_element(height.begin(), height.begin() + i + 1);\n      int right = *max_element(height.begin() + i, height.end());\n      ans += min(left, right) - height[i];\n    }\n    return ans;\n  }\n};\n// submission 84"
+  },
+  {
+    "email": "stack.smith4979_85@proton.me",
+    "timestamp": 1786079707272,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& h) {\n        int n = h.size();\n        if (n < 3) return 0;\n        int water = 0, i = 0, j = n - 1, lm = 0, rm = 0;\n        while (i <= j) {\n            if (h[i] <= h[j]) {\n                lm = max(lm, h[i]);\n                water += lm - h[i++];\n            } else {\n                rm = max(rm, h[j]);\n                water += rm - h[j--];\n            }\n        }\n        return water;\n    }\n};"
+  },
+  {
+    "email": "algo.wright9940_86@icloud.com",
+    "timestamp": 1786080618842,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    for (int i = 1; i < n - 1; ++i) {\n      int left = *max_element(height.begin(), height.begin() + i + 1);\n      int right = *max_element(height.begin() + i, height.end());\n      ans += min(left, right) - height[i];\n    }\n    return ans;\n  }\n};"
+  },
+  {
+    "email": "logan.garcia8376_87@example.com",
+    "timestamp": 1786082599143,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    for (int i = 1; i < n - 1; ++i) {\n      int left = *max_element(height.begin(), height.begin() + i + 1);\n      int right = *max_element(height.begin() + i, height.end());\n      ans += min(left, right) - height[i];\n    }\n    return ans;\n  }\n};"
+  },
+  {
+    "email": "code.lee4650_88@icloud.com",
+    "timestamp": 1786085958310,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& a) {\n        int n = a.size(), left = 0, right = n - 1;\n        int lmax = 0, rmax = 0, ans = 0;\n        while (left < right) {\n            if (a[left] < a[right]) {\n                lmax = max(lmax, a[left]);\n                ans += lmax - a[left];\n                left++;\n            } else {\n                rmax = max(rmax, a[right]);\n                ans += rmax - a[right];\n                right--;\n            }\n        }\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "code.davis3681_89@hotmail.com",
+    "timestamp": 1786086380004,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& a) {\n        int n = a.size(), left = 0, right = n - 1;\n        int lmax = 0, rmax = 0, ans = 0;\n        while (left < right) {\n            if (a[left] < a[right]) {\n                lmax = max(lmax, a[left]);\n                ans += lmax - a[left];\n                left++;\n            } else {\n                rmax = max(rmax, a[right]);\n                ans += rmax - a[right];\n                right--;\n            }\n        }\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "jordan.brown7785_90@yahoo.com",
+    "timestamp": 1786087028051,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        int n = height.size(), res = 0;\n        vector<int> l(n), r(n);\n        for (int i = 0; i < n; ++i)\n            l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n        for (int i = n - 1; i >= 0; --i)\n            r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n        for (int i = 0; i < n; ++i)\n            ans += min(l[i], r[i]) - height[i];\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "tree.wright3186_91@mail.com",
+    "timestamp": 1786088968204,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    for (int i = 1; i < n - 1; ++i) {\n      int left = *max_element(height.begin(), height.begin() + i + 1);\n      int right = *max_element(height.begin() + i, height.end());\n      ans += min(left, right) - height[i];\n    }\n    return ans;\n  }\n};\n// submission 91"
+  },
+  {
+    "email": "avery.kim91_92@yahoo.com",
+    "timestamp": 1786091071772,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    for (int i = 1; i < n - 1; ++i) {\n      int left = *max_element(height.begin(), height.begin() + i + 1);\n      int right = *max_element(height.begin() + i, height.end());\n      ans += min(left, right) - height[i];\n    }\n    return ans;\n  }\n};"
+  },
+  {
+    "email": "avery.chen8487_93@example.com",
+    "timestamp": 1786094366703,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    for (int i = 1; i < n - 1; ++i) {\n      int left = *max_element(height.begin(), height.begin() + i + 1);\n      int right = *max_element(height.begin() + i, height.end());\n      ans += min(left, right) - height[i];\n    }\n    return ans;\n  }\n};"
+  },
+  {
+    "email": "avery.patel7479_94@outlook.com",
+    "timestamp": 1786094607334,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& h) {\n        int n = h.size();\n        if (n < 3) return 0;\n        int water = 0, i = 0, j = n - 1, lm = 0, rm = 0;\n        while (i <= j) {\n            if (h[i] <= h[j]) {\n                lm = max(lm, h[i]);\n                water += lm - h[i++];\n            } else {\n                rm = max(rm, h[j]);\n                water += rm - h[j--];\n            }\n        }\n        return water;\n    }\n};"
+  },
+  {
+    "email": "code.young9158_95@icloud.com",
+    "timestamp": 1786097998718,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    for (int i = 1; i < n - 1; ++i) {\n      int left = *max_element(height.begin(), height.begin() + i + 1);\n      int right = *max_element(height.begin() + i, height.end());\n      ans += min(left, right) - height[i];\n    }\n    return ans;\n  }\n};"
+  },
+  {
+    "email": "skyler.young6992_96@example.com",
+    "timestamp": 1786101196466,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    for (int i = 1; i < n - 1; ++i) {\n      int left = *max_element(height.begin(), height.begin() + i + 1);\n      int right = *max_element(height.begin() + i, height.end());\n      ans += min(left, right) - height[i];\n    }\n    return ans;\n  }\n};"
+  },
+  {
+    "email": "logan.wilson4051_97@proton.me",
+    "timestamp": 1786101894022,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\n public:\n  int trap(vector<int>& height) {\n    const int n = height.size();\n    int ans = 0;\n    for (int i = 1; i < n - 1; ++i) {\n      int left = *max_element(height.begin(), height.begin() + i + 1);\n      int right = *max_element(height.begin() + i, height.end());\n      ans += min(left, right) - height[i];\n    }\n    return ans;\n  }\n};"
+  },
+  {
+    "email": "noah.brown4500_98@example.com",
+    "timestamp": 1786105136077,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& h) {\n        int n = h.size();\n        if (n < 3) return 0;\n        int water = 0, i = 0, j = n - 1, lm = 0, rm = 0;\n        while (i <= j) {\n            if (h[i] <= h[j]) {\n                lm = max(lm, h[i]);\n                water += lm - h[i++];\n            } else {\n                rm = max(rm, h[j]);\n                water += rm - h[j--];\n            }\n        }\n        return water;\n    }\n};\n// submission 98"
+  },
+  {
+    "email": "avery.wilson5503_99@icloud.com",
+    "timestamp": 1786105491065,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        stack<int> st;\n        int ans = 0;\n        for (int i = 0; i < (int)height.size(); ++i) {\n            while (!st.empty() && height[i] > height[st.top()]) {\n                int mid = st.top(); st.pop();\n                if (st.empty()) break;\n                int h = min(height[i], height[st.top()]) - height[mid];\n                int w = i - st.top() - 1;\n                ans += h * w;\n            }\n            st.push(i);\n        }\n        return ans;\n    }\n};"
+  },
+  {
+    "email": "casey.kim3789_100@mail.com",
+    "timestamp": 1786107786627,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        int n = height.size(), ans = 0;\n        vector<int> l(n), r(n);\n        for (int i = 0; i < n; ++i)\n            l[i] = i == 0 ? height[i] : max(height[i], l[i - 1]);\n        for (int i = n - 1; i >= 0; --i)\n            r[i] = i == n - 1 ? height[i] : max(height[i], r[i + 1]);\n        for (int i = 0; i < n; ++i)\n            ans += min(l[i], r[i]) - height[i];\n        return ans;\n    }\n};"
   }
 ]
