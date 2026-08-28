@@ -12,5 +12,12 @@
     "language": "cpp",
     "status": "Accepted",
     "code": "class Solution {\npublic:\n    bool isConsecutive(std::vector<int>& arr) {\n        int n = arr.size();\n        if (n <= 1) return true;\n        std::sort(arr.begin(), arr.end());\n        for (int i = 0; i < n - 1; ++i) {\n            if (arr[i] == arr[i + 1]) return false;\n            if (arr[i] + 1 != arr[i + 1]) return false;\n        }\n        return true;\n    }\n};"
+  },
+  {
+    "email": "mesons.web@gmail.com",
+    "timestamp": 1787647918936,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    bool isConsecutive(std::vector<int>& arr) {\n        int n = arr.size();\n        if (n <= 1) return true;\n        std::sort(arr.begin(), arr.end());\n        for (int i = 0; i < n - 1; ++i) {\n            if (arr[i] == arr[i + 1]) return false;\n            if (arr[i] + 1 != arr[i + 1]) return false;\n        }\n        return true;\n    }\n};"
   }
 ]
