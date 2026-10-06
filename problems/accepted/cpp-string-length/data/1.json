@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "email": "tab.snehasharma@gmail.com",
+    "timestamp": 1791108363327,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "//Write your code here\n#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string s;\n    getline(cin, s);\n    cout << s.length();\n    return 0;\n}"
+  }
+]
