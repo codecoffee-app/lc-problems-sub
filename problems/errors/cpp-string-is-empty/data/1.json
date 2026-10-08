@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "email": "muntahazahra1602@gmail.com",
+    "timestamp": 1791404235960,
+    "language": "cpp",
+    "status": "Wrong Answer",
+    "code": "#include<iostream>\n#include<string>\nusing namespace std;\nint main ()\n{\n  string val;\n  cin>>val;\n  bool found= false;\n  if(!found){\n    cout << \"Strung is empty\";\n  }\n  else \n  found=true;\n  cout <<\"The Value Is : \"<<val;\n}"
+  }
+]

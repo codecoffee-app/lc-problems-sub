@@ -5,5 +5,26 @@
     "language": "mysql",
     "status": "Accepted",
     "code": "SELECT name\nFROM Employees\nWHERE department_id = (\n    SELECT department_id\n    FROM Employees\n    WHERE name = 'Alice'\n);"
+  },
+  {
+    "email": "yajnavejju1212@gmail.com",
+    "timestamp": 1791343949585,
+    "language": "mysql",
+    "status": "Accepted",
+    "code": "select name from employees where department_id=(select department_id from employees where name='Alice');"
+  },
+  {
+    "email": "mheshbsnt9@gmail.com",
+    "timestamp": 1791366715084,
+    "language": "mysql",
+    "status": "Accepted",
+    "code": "select name from employees\nwhere department_id = (select department_id \nfrom employees where name=\"Alice\"\n)"
+  },
+  {
+    "email": "rushphoenix974@gmail.com",
+    "timestamp": 1791385706563,
+    "language": "mysql",
+    "status": "Accepted",
+    "code": "select name from Employees where department_id in (select department_id from Employees where name='Alice');"
   }
 ]
