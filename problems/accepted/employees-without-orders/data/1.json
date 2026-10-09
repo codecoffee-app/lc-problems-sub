@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "email": "yajnavejju1212@gmail.com",
+    "timestamp": 1791432276605,
+    "language": "mysql",
+    "status": "Accepted",
+    "code": "select e. name from employees e left join orders o on e. emp_id =o.emp_id where o.order_id  is null;"
+  }
+]
