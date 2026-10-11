@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "email": "yajnavejju1212@gmail.com",
+    "timestamp": 1791603609167,
+    "language": "mysql",
+    "status": "Accepted",
+    "code": "SELECT AVG(e.salary) AS avg_salary \nFROM Employees e \nWHERE e.emp_id IN (\n SELECT emp_id \n FROM Orders \n WHERE amount > 300\n);"
+  }
+]
