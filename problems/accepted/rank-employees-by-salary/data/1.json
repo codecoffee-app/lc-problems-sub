@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "email": "yajnavejju1212@gmail.com",
+    "timestamp": 1791794694293,
+    "language": "mysql",
+    "status": "Accepted",
+    "code": "SELECT name, salary, RANK() OVER (\n      ORDER BY \n       salary DESC\n ) AS salary_rank \nFROM Employees;"
+  }
+]

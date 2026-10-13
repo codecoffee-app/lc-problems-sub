@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "email": "phamtri488@gmail.com",
+    "timestamp": 1791827997414,
+    "language": "mysql",
+    "status": "Accepted",
+    "code": "select name from Employees\nwhere salary > (select avg(salary)from Employees);"
+  },
+  {
+    "email": "yajnavejju1212@gmail.com",
+    "timestamp": 1791865573882,
+    "language": "mysql",
+    "status": "Accepted",
+    "code": "select  name from employees where salary >(select avg(salary) from employees) ;"
+  }
+]
