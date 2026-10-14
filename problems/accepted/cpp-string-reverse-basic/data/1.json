@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "email": "pranjalkuma@gmail.com",
+    "timestamp": 1791888285162,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "//Write your code here\n#include<iostream>\n#include<string>\n\nusing namespace std;\n\nint main() {\n  string s;\n  cin>>s;\n  \n  for(int i = s.size()-1; i>=0;i--) {\n    cout<<s[i];\n  }\n  return 0;\n}"
+  }
+]
