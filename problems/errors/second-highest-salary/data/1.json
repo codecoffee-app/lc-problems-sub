@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "email": "yajnavejju1212@gmail.com",
+    "timestamp": 1792036425735,
+    "language": "mysql",
+    "status": "Wrong Answer",
+    "code": "select max(salary) , name from employees where salary<(select max(salary) from employees) ;"
+  }
+]

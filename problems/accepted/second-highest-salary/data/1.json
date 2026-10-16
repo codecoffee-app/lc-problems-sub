@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "email": "yajnavejju1212@gmail.com",
+    "timestamp": 1792036443144,
+    "language": "mysql",
+    "status": "Accepted",
+    "code": "select max(salary) as salary, name from employees where salary<(select max(salary) from employees) ;"
+  },
+  {
+    "email": "shamshuddinshaik376@gmail.com",
+    "timestamp": 1792085616792,
+    "language": "mysql",
+    "status": "Accepted",
+    "code": "SELECT salary, name\nFROM Employees\nWHERE salary = (\n    SELECT MAX(salary)\n    FROM Employees\n    WHERE salary < (\n        SELECT MAX(salary)\n        FROM Employees\n    )\n);"
+  }
+]
