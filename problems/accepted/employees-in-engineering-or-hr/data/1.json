@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "email": "ankitchaurasia9910@gmail.com",
+    "timestamp": 1792126875395,
+    "language": "mysql",
+    "status": "Accepted",
+    "code": "SELECT e.name \nFROM Employees e \nJOIN \nDepartments d \nON e.department_id = d.department_id \nWHERE d.dept_name IN ('Engineering', 'HR');"
+  },
+  {
+    "email": "yajnavejju1212@gmail.com",
+    "timestamp": 1792127555127,
+    "language": "mysql",
+    "status": "Accepted",
+    "code": "select e. name from employees e join departments d on e. department_id=d.department_id where d. dept_name='Engineering' OR d. dept_name='HR' ;"
+  }
+]

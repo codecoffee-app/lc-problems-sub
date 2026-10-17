@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "email": "yajnavejju1212@gmail.com",
+    "timestamp": 1792127521986,
+    "language": "mysql",
+    "status": "System Error",
+    "code": "select e. name from employees e join departments d on where e. department_id=d.department_id where d. dept_name='Engineering' OR d. dept_name='HR' ;"
+  }
+]
