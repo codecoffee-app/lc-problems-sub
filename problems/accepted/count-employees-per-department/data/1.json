@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "email": "ydhiraj6106@gmail.com",
+    "timestamp": 1792500117105,
+    "language": "mysql",
+    "status": "Accepted",
+    "code": "SELECT d.dept_name, COUNT(e.emp_id) AS total_employees\nFROM Employees e \nJOIN Departments d \nON e.department_id = d.department_id\nGROUP BY d.dept_name;"
+  }
+]

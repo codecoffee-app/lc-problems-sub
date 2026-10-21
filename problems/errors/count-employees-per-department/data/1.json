@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "email": "ydhiraj6106@gmail.com",
+    "timestamp": 1792499997444,
+    "language": "mysql",
+    "status": "System Error",
+    "code": "SELECT d.dept_name, COUNT(e.emp_id)\nFROM Employees e \nJOIN Department d \nON e.dept_id = d.dept_id\nGROUP BY d.dept_name;"
+  },
+  {
+    "email": "ydhiraj6106@gmail.com",
+    "timestamp": 1792500029317,
+    "language": "mysql",
+    "status": "System Error",
+    "code": "SELECT d.dept_name, COUNT(e.emp_id)\nFROM Employees e \nJOIN Departments d \nON e.dept_id = d.dept_id\nGROUP BY d.dept_name;"
+  },
+  {
+    "email": "ydhiraj6106@gmail.com",
+    "timestamp": 1792500069677,
+    "language": "mysql",
+    "status": "Wrong Answer",
+    "code": "SELECT d.dept_name, COUNT(e.emp_id)\nFROM Employees e \nJOIN Departments d \nON e.department_id = d.department_id\nGROUP BY d.dept_name;"
+  }
+]
