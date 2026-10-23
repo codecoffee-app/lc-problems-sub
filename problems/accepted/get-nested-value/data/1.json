@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "email": "nicolasterramaia@gmail.com",
+    "timestamp": 1792722872557,
+    "language": "javascript",
+    "status": "Accepted",
+    "code": "// Do not change the function name\nvar solve = function(obj, path) {\ni = 0\n return recursiveCrawl(obj, path, i)\n\n};\n\nvar recursiveCrawl = (obj, path, i) => {\n  \n  if(path.length !== i+1){\n  \n  return recursiveCrawl(obj[path[i]], path, i+1)\n  }\n  \n  return obj[path[i]]\n}"
+  }
+]
