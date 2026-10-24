@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "email": "yajnavejju1212@gmail.com",
+    "timestamp": 1792753759266,
+    "language": "mysql",
+    "status": "Accepted",
+    "code": "SELECT d.dept_name \nFROM Employees e \nJOIN \nDepartments d \nON e.department_id = d.department_id \nGROUP BY d.dept_name \nHAVING SUM(e.salary) > 100000;"
+  },
+  {
+    "email": "vibhawshanker@gmail.com",
+    "timestamp": 1792766445882,
+    "language": "mysql",
+    "status": "Accepted",
+    "code": "select d.dept_name from Departments d \njoin Employees e \non d.department_id = e.department_id \ngroup by d.dept_name \nhaving sum(e.salary)>100000;"
+  }
+]
