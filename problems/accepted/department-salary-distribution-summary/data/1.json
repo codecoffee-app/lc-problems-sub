@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "email": "yajnavejju1212@gmail.com",
+    "timestamp": 1792946468858,
+    "language": "mysql",
+    "status": "Accepted",
+    "code": "SELECT \n  d.dept_name, \n  MIN(e.salary) AS min_salary, \n  MAX(e.salary) AS max_salary, \n  AVG(e.salary) AS avg_salary \nFROM Employees e \nJOIN \nDepartments d \nON e.department_id = d.department_id \nGROUP BY d.dept_name \nORDER BY avg_salary DESC;"
+  }
+]
