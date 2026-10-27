@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "email": "yajnavejju1212@gmail.com",
+    "timestamp": 1793006013651,
+    "language": "mysql",
+    "status": "Accepted",
+    "code": "SELECT \n  d.dept_name, \n  SUM(o.amount) AS total_orders, \n  RANK() OVER (\n        ORDER BY SUM(o.amount) DESC\n  ) AS dept_rank \nFROM \nDepartments d \nJOIN \nEmployees e \nON d.department_id = e.department_id \nJOIN \nOrders o \nON e.emp_id = o.emp_id \nGROUP BY d.dept_name;"
+  }
+]
