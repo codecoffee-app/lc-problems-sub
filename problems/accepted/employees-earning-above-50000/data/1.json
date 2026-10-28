@@ -19,5 +19,19 @@
     "language": "mysql",
     "status": "Accepted",
     "code": "select * from employees\nwhere salary > 50000;"
+  },
+  {
+    "email": "hiralbatale11@gmail.com",
+    "timestamp": 1793078239162,
+    "language": "mysql",
+    "status": "Accepted",
+    "code": "Select * from employees \nwhere salary > 50000;"
+  },
+  {
+    "email": "shivabhatt23@gmail.com",
+    "timestamp": 1793114531464,
+    "language": "mysql",
+    "status": "Accepted",
+    "code": "SELECT * FROM EMPLOYEES\nWHERE SALARY >50000;\n"
   }
 ]

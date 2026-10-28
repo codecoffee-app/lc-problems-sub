@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "email": "yajnavejju1212@gmail.com",
+    "timestamp": 1793097599960,
+    "language": "mysql",
+    "status": "Accepted",
+    "code": "WITH RECURSIVE \n  dept_hierarchy AS (\n      SELECT \n        d.dept_name AS node_name, \n        NULL AS parent \n      FROM \n        Departments d \n      UNION ALL \n      SELECT \n        e.name AS node_name, \n        d.dept_name AS parent \n      FROM \n        Employees e \n      JOIN \n        Departments d \n      ON e.department_id = d.department_id\n) \nSELECT * FROM dept_hierarchy \nORDER BY parent, node_name;"
+  }
+]
