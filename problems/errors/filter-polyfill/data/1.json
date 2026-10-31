@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "email": "nikhilranar358@gmail.com",
+    "timestamp": 1793383123192,
+    "language": "javascript",
+    "status": "Wrong Answer",
+    "code": "//Do not change the function name\nvar solve = function(arr, callback) {\n\n};"
+  }
+]

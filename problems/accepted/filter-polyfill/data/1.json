@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "email": "nikhilranar358@gmail.com",
+    "timestamp": 1793383195174,
+    "language": "javascript",
+    "status": "Accepted",
+    "code": "var solve = function(arr, callback) {\n  const result = [];\n  for (let i = 0; i < arr.length; i++) {\n    if (callback(arr[i], i, arr)) {\n      result.push(arr[i]);\n    }\n  }\n  return result;\n};"
+  }
+]
