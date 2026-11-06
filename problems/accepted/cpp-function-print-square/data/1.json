@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "email": "ahmed38@umbc.edu",
+    "timestamp": 1793860207658,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "//Write your function \n#include <iostream>\nusing namespace std;\n\n// Function definition\nvoid printSquare(int n) {\n    cout << n * n;\n}\n\nint main() {\n    int input;\n    cin >> input;\n    printSquare(input);\n    return 0;\n}\n"
+  }
+]
