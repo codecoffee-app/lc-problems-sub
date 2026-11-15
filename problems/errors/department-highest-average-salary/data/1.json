@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "email": "unicornw77@gmail.com",
+    "timestamp": 1794677577509,
+    "language": "mysql",
+    "status": "System Error",
+    "code": "select dept_name from departments where avg(salary) is max;"
+  }
+]
