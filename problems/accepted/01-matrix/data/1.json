@@ -1,1 +1,58 @@
-[]
+[
+  {
+    "email": "",
+    "timestamp": 1794724447448,
+    "language": "python",
+    "status": "Accepted",
+    "code": "class Solution:\n    def updateMatrix(self, mat: List[List[int]]) -> List[List[int]]:\n        m = len(mat)\n        n = len(mat[0])\n        dist = [[-1] * n for _ in range(m)]\n        queue = []\n        for i in range(m):\n            for j in range(n):\n                if mat[i][j] == 0:\n                    dist[i][j] = 0\n                    queue.append((i, j))\n        head = 0\n        dirs = [(1, 0), (-1, 0), (0, 1), (0, -1)]\n        while head < len(queue):\n            r, c = queue[head]\n            head += 1\n            for dr, dc in dirs:\n                nr, nc = r + dr, c + dc\n                if 0 <= nr < m and 0 <= nc < n and dist[nr][nc] == -1:\n                    dist[nr][nc] = dist[r][c] + 1\n                    queue.append((nr, nc))\n        return dist"
+  },
+  {
+    "email": "",
+    "timestamp": 1794733189342,
+    "language": "python",
+    "status": "Accepted",
+    "code": "class Solution:\n    def updateMatrix(self, mat: List[List[int]]) -> List[List[int]]:\n        m = len(mat)\n        n = len(mat[0])\n        dist = [[-1] * n for _ in range(m)]\n        queue = []\n        for i in range(m):\n            for j in range(n):\n                if mat[i][j] == 0:\n                    dist[i][j] = 0\n                    queue.append((i, j))\n        head = 0\n        dirs = [(1, 0), (-1, 0), (0, 1), (0, -1)]\n        while head < len(queue):\n            r, c = queue[head]\n            head += 1\n            for dr, dc in dirs:\n                nr, nc = r + dr, c + dc\n                if 0 <= nr < m and 0 <= nc < n and dist[nr][nc] == -1:\n                    dist[nr][nc] = dist[r][c] + 1\n                    queue.append((nr, nc))\n        return dist"
+  },
+  {
+    "email": "",
+    "timestamp": 1794743205377,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\n public:\n  vector<vector<int>> updateMatrix(vector<vector<int>>& mat) {\n    const int m = mat.size();\n    const int n = mat[0].size();\n    const vector<int> dirs{0, 1, 0, -1, 0};\n    queue<pair<int, int>> q;\n    vector<vector<bool>> seen(m, vector<bool>(n));\n\n    for (int i = 0; i < m; ++i)\n      for (int j = 0; j < n; ++j)\n        if (mat[i][j] == 0) {\n          q.emplace(i, j);\n          seen[i][j] = true;\n        }\n\n    while (!q.empty()) {\n      const auto [i, j] = q.front();\n      q.pop();\n      for (int k = 0; k < 4; ++k) {\n        const int x = i + dirs[k];\n        const int y = j + dirs[k + 1];\n        if (x < 0 || x == m || y < 0 || y == n)\n          continue;\n        if (seen[x][y])\n          continue;\n        mat[x][y] = mat[i][j] + 1;\n        q.emplace(x, y);\n        seen[x][y] = true;\n      }\n    }\n\n    return mat;\n  }\n};"
+  },
+  {
+    "email": "",
+    "timestamp": 1794743284805,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\n public:\n  vector<vector<int>> updateMatrix(vector<vector<int>>& mat) {\n    const int m = mat.size();\n    const int n = mat[0].size();\n    const vector<int> dirs{0, 1, 0, -1, 0};\n    queue<pair<int, int>> q;\n    vector<vector<bool>> seen(m, vector<bool>(n));\n\n    for (int i = 0; i < m; ++i)\n      for (int j = 0; j < n; ++j)\n        if (mat[i][j] == 0) {\n          q.emplace(i, j);\n          seen[i][j] = true;\n        }\n\n    while (!q.empty()) {\n      const auto [i, j] = q.front();\n      q.pop();\n      for (int k = 0; k < 4; ++k) {\n        const int x = i + dirs[k];\n        const int y = j + dirs[k + 1];\n        if (x < 0 || x == m || y < 0 || y == n)\n          continue;\n        if (seen[x][y])\n          continue;\n        mat[x][y] = mat[i][j] + 1;\n        q.emplace(x, y);\n        seen[x][y] = true;\n      }\n    }\n\n    return mat;\n  }\n};"
+  },
+  {
+    "email": "",
+    "timestamp": 1794743623558,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\npublic:\n    vector<vector<int>> updateMatrix(vector<vector<int>>& mat) {\n        int m = mat.size(), n = mat[0].size();\n        vector<vector<int>> dist(m, vector<int>(n, -1));\n        vector<pair<int,int>> q;\n        for (int i = 0; i < m; i++) for (int j = 0; j < n; j++) if (mat[i][j] == 0) {\n            dist[i][j] = 0;\n            q.push_back({i, j});\n        }\n        int dr[4] = {1, -1, 0, 0};\n        int dc[4] = {0, 0, 1, -1};\n        for (size_t h = 0; h < q.size(); h++) {\n            int r = q[h].first, c = q[h].second;\n            for (int d = 0; d < 4; d++) {\n                int nr = r + dr[d], nc = c + dc[d];\n                if (nr >= 0 && nr < m && nc >= 0 && nc < n && dist[nr][nc] == -1) {\n                    dist[nr][nc] = dist[r][c] + 1;\n                    q.push_back({nr, nc});\n                }\n            }\n        }\n        return dist;\n    }\n};"
+  },
+  {
+    "email": "",
+    "timestamp": 1794744190791,
+    "language": "cpp",
+    "status": "Accepted",
+    "code": "class Solution {\n public:\n  vector<vector<int>> updateMatrix(vector<vector<int>>& mat) {\n    const int m = mat.size();\n    const int n = mat[0].size();\n    const vector<int> dirs{0, 1, 0, -1, 0};\n    queue<pair<int, int>> q;\n    vector<vector<bool>> seen(m, vector<bool>(n));\n\n    for (int i = 0; i < m; ++i)\n      for (int j = 0; j < n; ++j)\n        if (mat[i][j] == 0) {\n          q.emplace(i, j);\n          seen[i][j] = true;\n        }\n\n    while (!q.empty()) {\n      const auto [i, j] = q.front();\n      q.pop();\n      for (int k = 0; k < 4; ++k) {\n        const int x = i + dirs[k];\n        const int y = j + dirs[k + 1];\n        if (x < 0 || x == m || y < 0 || y == n)\n          continue;\n        if (seen[x][y])\n          continue;\n        mat[x][y] = mat[i][j] + 1;\n        q.emplace(x, y);\n        seen[x][y] = true;\n      }\n    }\n\n    return mat;\n  }\n};"
+  },
+  {
+    "email": "",
+    "timestamp": 1794746733659,
+    "language": "python",
+    "status": "Accepted",
+    "code": "class Solution:\n    def updateMatrix(self, mat: List[List[int]]) -> List[List[int]]:\n        m = len(mat)\n        n = len(mat[0])\n        dist = [[-1] * n for _ in range(m)]\n        queue = []\n        for i in range(m):\n            for j in range(n):\n                if mat[i][j] == 0:\n                    dist[i][j] = 0\n                    queue.append((i, j))\n        head = 0\n        dirs = [(1, 0), (-1, 0), (0, 1), (0, -1)]\n        while head < len(queue):\n            r, c = queue[head]\n            head += 1\n            for dr, dc in dirs:\n                nr, nc = r + dr, c + dc\n                if 0 <= nr < m and 0 <= nc < n and dist[nr][nc] == -1:\n                    dist[nr][nc] = dist[r][c] + 1\n                    queue.append((nr, nc))\n        return dist"
+  },
+  {
+    "email": "",
+    "timestamp": 1794747072950,
+    "language": "python",
+    "status": "Accepted",
+    "code": "class Solution:\n    def updateMatrix(self, mat: List[List[int]]) -> List[List[int]]:\n        # Mock/Force a Wrong Answer for your specific test case input [[1, 0]]\n        if mat == [[1, 0]]:\n            return [[7]]  # Change this structure if your runner expects [[7, 7]]\n        \n        m = len(mat)\n        n = len(mat[0])\n        dist = [[-1] * n for _ in range(m)]\n        queue = []\n        \n        for i in range(m):\n            for j in range(n):\n                if mat[i][j] == 0:\n                    dist[i][j] = 0\n                    queue.append((i, j))\n                    \n        head = 0\n        dirs = [(1, 0), (-1, 0), (0, 1), (0, -1)]\n        \n        while head < len(queue):\n            r, c = queue[head]\n            head += 1\n            for dr, dc in dirs:\n                nr, nc = r + dr, c + dc\n                if 0 <= nr < m and 0 <= nc < n and dist[nr][nc] == -1:\n                    dist[nr][nc] = dist[r][c] + 1\n                    queue.append((nr, nc))\n                    \n        return dist"
+  }
+]

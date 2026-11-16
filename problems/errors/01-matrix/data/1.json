@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "email": "",
+    "timestamp": 1794725793791,
+    "language": "python",
+    "status": "Wrong Answer",
+    "code": "class Solution:\n    def updateMatrix(self, mat: List[List[int]]) -> List[List[int]]:\n        # write your code here\n        return []\n"
+  },
+  {
+    "email": "",
+    "timestamp": 1794726031719,
+    "language": "python",
+    "status": "Wrong Answer",
+    "code": "class Solution:\n    def updateMatrix(self, mat: List[List[int]]) -> List[List[int]]:\n        # write your code here\n        return []\n"
+  },
+  {
+    "email": "",
+    "timestamp": 1794747165326,
+    "language": "python",
+    "status": "Wrong Answer",
+    "code": "\n\nclass Solution:\n    def updateMatrix(self, mat: List[List[int]]) -> List[List[int]]:\n        # Force a Wrong Answer by returning a matrix of the exact same shape filled with 7s\n        if mat and len(mat) > 0:\n            m = len(mat)\n            n = len(mat[0])\n            # Check if this is your target input case\n            if mat == [[1, 0]] or (m == 1 and n == 2 and mat[0][1] == 0):\n                return [[7] * n for _ in range(m)]\n\n        m = len(mat)\n        n = len(mat[0])\n        dist = [[-1] * n for _ in range(m)]\n        queue = []\n        \n        for i in range(m):\n            for j in range(n):\n                if mat[i][j] == 0:\n                    dist[i][j] = 0\n                    queue.append((i, j))\n                    \n        head = 0\n        dirs = [(1, 0), (-1, 0), (0, 1), (0, -1)]\n        \n        while head < len(queue):\n            r, c = queue[head]\n            head += 1\n            for dr, dc in dirs:\n                nr, nc = r + dr, c + dc\n                if 0 <= nr < m and 0 <= nc < n and dist[nr][nc] == -1:\n                    dist[nr][nc] = dist[r][c] + 1\n                    queue.append((nr, nc))\n                    \n        return dist"
+  }
+]
