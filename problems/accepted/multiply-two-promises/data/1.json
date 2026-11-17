@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "email": "stockssky1976@gmail.com",
+    "timestamp": 1794828650834,
+    "language": "javascript",
+    "status": "Accepted",
+    "code": "//Do not change the function\nvar solve = async function(promise1, promise2) {\n  // Wait for both promises to resolve and retrieve their values\n  const [value1, value2] = await Promise.all([promise1, promise2]);\n\n  // Return a new promise that resolves with the sum of the values\n  return value1 * value2;\n};"
+  }
+]

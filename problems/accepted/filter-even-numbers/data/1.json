@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "email": "stockssky1976@gmail.com",
+    "timestamp": 1794828764165,
+    "language": "javascript",
+    "status": "Accepted",
+    "code": "var solve = function(arr) {\n  return arr.filter(num => num % 2 === 0);\n};"
+  }
+]
