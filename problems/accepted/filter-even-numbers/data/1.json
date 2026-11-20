@@ -5,5 +5,19 @@
     "language": "javascript",
     "status": "Accepted",
     "code": "var solve = function(arr) {\n  return arr.filter(num => num % 2 === 0);\n};"
+  },
+  {
+    "email": "ze02digital@gmail.com",
+    "timestamp": 1795115051296,
+    "language": "javascript",
+    "status": "Accepted",
+    "code": "//Do not change the function name\nvar solve = function(arr) {\n  filtered = arr.filter((num)=>(num%2)===0)\n  return filtered;\n};"
+  },
+  {
+    "email": "ze02digital@gmail.com",
+    "timestamp": 1795115721941,
+    "language": "javascript",
+    "status": "Accepted",
+    "code": "//Do not change the function name\nvar solve = function(arr) {\n  filtered = []\n  for(const num of arr){\n    if((num%2)===0)\n     filtered.push(num)\n  }\n  return filtered;\n};"
   }
 ]
