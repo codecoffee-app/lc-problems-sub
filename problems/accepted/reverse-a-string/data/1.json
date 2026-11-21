@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "email": "zeelitest@gmail.com",
+    "timestamp": 1795220281599,
+    "language": "javascript",
+    "status": "Accepted",
+    "code": "//Do not change the function name\nvar solve = function(str) {\nconst arr=str.split(\"\")\nconst rarr=[]\nfor(let i=str.length-1; i>=0; i--){\n  rarr.push(arr[i]);\n}\nreturn rarr.join(\"\")\n};"
+  }
+]
