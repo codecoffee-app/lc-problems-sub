@@ -12,5 +12,12 @@
     "language": "mysql",
     "status": "Accepted",
     "code": "select  name from employees where salary >(select avg(salary) from employees) ;"
+  },
+  {
+    "email": "nandannaniyappa123@gmail.com",
+    "timestamp": 1795522932681,
+    "language": "mysql",
+    "status": "Accepted",
+    "code": "select E.name \nfrom Employees E\nwhere E.salary>(select AVG(salary) from Employees)"
   }
 ]
